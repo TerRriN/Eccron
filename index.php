@@ -30,7 +30,7 @@
             $_SESSION["account"] = $account["accountID"];
     } ?>
 
-    <div class="flow">
+    <div class="create">
         <form action="" method="post">
             <input name="blogID" placeholder="BlogID">
             <input name="title" placeholder="Title">
@@ -55,6 +55,11 @@
             ]);
             var_dump($response);
         } ?>
+    </div>
+    <div class="flow">
+        <?php $response = myCurl::execute("http://10.130.216.144/~theprovider/blog/php/get-all-posts.php",["blogID"=>4]);
+            echo $response; 
+        ?>
     </div>
 </body>
 </html>
