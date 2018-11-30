@@ -11,8 +11,8 @@
 </head>
 <body>
     <form action="" method="post">
-        <input name="username" placeholder="Username">
-        <input name="password" placeholder="Password">
+        <input type="text" name="username" placeholder="Username"> </br>
+        <input type="text" name="password" placeholder="Password"> </br>
         <input type="submit" value="Submit">
     </form>
     <?php if(isset($_POST["username"]) && isset($_POST["password"])){
@@ -32,10 +32,10 @@
 
     <div class="create">
         <form action="" method="post">
-            <input name="blogID" placeholder="BlogID">
-            <input name="title" placeholder="Title">
-            <input name="date" type="date">
-            <input name="content" placeholder="Text here...">
+            <input type="text" name="blogID" placeholder="BlogID"> </br>
+            <input type="text" name="title" placeholder="Title"> </br>
+            <input type="text" name="date" type="date"> </br>
+            <input type="text" name="content" placeholder="Text here..."> </br>
             <input type="submit" value="Submit">   
         </form>
         <?php if(isset($_POST["blogID"]) && isset($_POST["title"]) && isset($_POST["date"]) && isset($_POST["content"])){
