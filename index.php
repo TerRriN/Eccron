@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8" />
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <script src="js/jquery-3.3.1.min.js"></script>
@@ -57,9 +58,15 @@
         } ?>
     </div>
     <div class="flow">
-        <?php $response = myCurl::execute("http://10.130.216.144/~theprovider/blog/php/get-all-posts.php",["blogID"=>4]);
-            echo $response; 
+        <?php $response = myCurl::execute("http://10.130.216.144/~theprovider/blog/php/get-all-posts.php",["blogID"=>4]); 
+            foreach ($response as $row) {
+                echo $response;
+            }
         ?>
+
+        
+        
     </div>
+
 </body>
 </html>
