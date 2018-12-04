@@ -1,11 +1,40 @@
-.flow{
-    background-color: white;
-    color: black;
-    text-align: center;
-    
+body{
+    font-family: 'Roboto', sans-serif;
 }
-
-input[type=text], select {
+.flow{
+    position: absolute;
+    width:40vw;
+    left:30vw;
+}
+h1{
+    font-size:2em
+}
+h2{
+    font-size:1em;
+    opacity: 0.6;
+}
+h3{
+    font-size: 1.1em;
+}
+.objects span{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    border:1px solid black;
+}
+.comment-field{
+    width:100%;
+    background-color:rgb(212, 212, 212);
+}
+.comment-submit{
+    width:9%;
+    font-size:1.5em;
+    border-radius: 50%;
+    float: right;
+    margin-right:1%;
+    margin-top: 0.5%;
+}
+input{
     width: 20%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -14,8 +43,16 @@ input[type=text], select {
     border-radius: 4px;
     box-sizing: border-box;
 }
-
-input[type=submit] {
+input[type=text], select {
+    width: 85%;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-left:1%;
+}
+.create-submit{
     width: 20%;
     background-color: #7b1fa2;
     color: white;
@@ -25,8 +62,6 @@ input[type=submit] {
     border-radius: 4px;
     cursor: pointer;
 }
-
-input[type=submit]:hover {
+.create-submit:hover {
     background-color: #4a0072;
 }
-
