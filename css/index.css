@@ -22,7 +22,16 @@ h3{
     text-align: center;
     border:1px solid black;
 }
+.comments{
+border-radius: 10px;
+background-color: azure;
+padding: 5px;
+
+}
 .comment-field{
+    max-height: 40%;
+    display: inline-block;
+    overflow: scroll;
     width:100%;
     background-color:rgb(212, 212, 212);
 }

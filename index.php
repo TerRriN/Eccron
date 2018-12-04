@@ -87,7 +87,7 @@
                             $comment = json_decode($response,true);
 
                             foreach($comment["posts"] as $object){?>
-                                <p class="objects">
+                                <p class="comments">
                                     <span>
                                         <h3><?php echo $object["content"],"</br>\n"; ?></h3>
                                     </span> 
