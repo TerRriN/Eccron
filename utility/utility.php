@@ -286,7 +286,7 @@
     }
 
     class myCurl{
-        public static function execute($url,$data){
+        public static function execute_curl($url,$data){
 
             $data_string = json_encode($data);                                                                                   
             
