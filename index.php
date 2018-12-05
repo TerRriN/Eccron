@@ -13,8 +13,8 @@
 </head>
 <body>
     <form action="" method="post">
-        <input type="text" name="username" placeholder="Username"> </br>
-        <input type="text" name="password" placeholder="Password"> </br>
+        <input name="username" placeholder="Username"> </br>
+        <input name="password" placeholder="Password"> </br>
         <input class="create-submit" type="submit" value="Submit">
     </form>
     <?php if(isset($_POST["username"]) && isset($_POST["password"])){
@@ -61,34 +61,50 @@
     
     <div class="flow">
         <?php $response = myCurl::execute_curl("http://10.130.216.144/~theprovider/blog/php/get-all-posts.php",["blogID"=>4]); 
-                $object = json_decode($response,true);
-                echo $object["status"];?>
+                $post = json_decode($response,true);
 
-            <?php foreach($object["posts"] as $array){?>
-                <p class="objects">
-                    <span>
-                        <h1><?php echo $array["title"],"</br>\n"; ?></h1>
-                        <h2><?php echo $array["date"],"</br>\n"; ?></h2>
-                        <h3><?php echo $array["content"],"</br>\n"; ?></h3>
-                    </span>
-                    
-                    <?php
-                        $post = json_decode($response,true);
-                        $_SESSION["postID"] = $token["postID"];
-                    ?>
-
-                    <div class="comment-field">
-                        <form action="" method="post">
-                            <input type="text" name="content" placeholder="Text">
-                            <input class="material-icons comment-submit" type="submit" value="done_outline">
-                        </form>
+                foreach($post["posts"] as $array){?>
+                    <p class="objects">
+                        <span>
+                            <h1><?php echo $array["title"],"</br>\n"; ?></h1>
+                            <h2><?php echo $array["date"],"</br>\n"; ?></h2>
+                            <h3><?php echo $array["content"],"</br>\n"; ?></h3>
+                        </span>
                        
+                        <div class="comment-field">
+                            <form action="" method="post">
+                                <input type="text" name="content" placeholder="Text">
+                                <input class="material-icons comment-submit" type="submit" value="done_outline">
+                            </form>
 
-                        <?php $response = myCurl::execute_curl("http://10.130.216.144/~theprovider/blog/php/get-all-comments.php",
-                        ["postID"=>$_SESSION["postID"]]); /*Måste få varje individuellt post id*/ ?>
-                    </div>
-                </p>
-            <?php } ?> 
+                            <?php if(isset($_POST["content"])){
+                                $content = $_POST["content"];
+
+                                $response = myCurl::execute_curl("http://10.130.216.144/~theprovider/blog/php/create-comment.php",
+                                [
+                                    "token"=>$_SESSION["token"],
+                                    "accountID"=>$_SESSION["account"],
+                                    "postID"=>$array["postID"],
+                                    "content"=>$content,
+                                    "blogID"=>4
+                                ]);
+                                var_dump($response);
+                            }
+
+                            $response = myCurl::execute_curl("http://10.130.216.144/~theprovider/blog/php/get-all-comments.php",
+                            ["blogID"=>4, "postID"=>$array["postID"]]); /*Måste få varje individuellt post id*/ 
+                            $comment = json_decode($response,true);
+
+                            foreach($comment["posts"] as $object){?>
+                                <p class="objects">
+                                    <span>
+                                        <h4><?php echo $object["content"],"</br>\n"; ?></h4>
+                                        <h2><?php echo $object["date"],"</br>\n"; ?></h2>
+                                    </span> 
+                           <?php } ?>
+                        </div>
+                    </p>
+                <?php } ?> 
     </div>
 
 </body>
