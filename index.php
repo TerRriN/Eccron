@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/index-sass.css">
     <script src="js/jquery-3.3.1.min.js"></script>
 </head>
 <body>
@@ -99,7 +99,7 @@
                             $comment = json_decode($response,true);
 
                             foreach($comment["posts"] as $object){?>
-                                <p class="objects">
+                                <p class="comments">
                                     <span>
                                         <h4><?php echo $object["content"],"</br>\n"; ?></h4>
                                         <h2><?php echo $object["date"],"</br>\n"; ?></h2>
