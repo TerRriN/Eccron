@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/index-sass.css">
     <script src="js/jquery-3.3.1.min.js"></script>
 </head>
 <body>
@@ -74,17 +74,20 @@
                         <div class="comment-field">
                             <form action="" method="post">
                                 <input type="text" name="content" placeholder="Text">
+                                <input name="date" type="date">
                                 <input class="material-icons comment-submit" type="submit" value="done_outline">
                             </form>
 
-                            <?php if(isset($_POST["content"])){
+                            <?php if(isset($_POST["content"]) && isset($_POST["date"])){
                                 $content = $_POST["content"];
+                                $date = $_POST["date"];
 
                                 $response = myCurl::execute_curl("http://10.130.216.144/~theprovider/blog/php/create-comment.php",
                                 [
                                     "token"=>$_SESSION["token"],
                                     "accountID"=>$_SESSION["account"],
                                     "postID"=>$array["postID"],
+                                    "date"=>$date,
                                     "content"=>$content,
                                     "blogID"=>4
                                 ]);
@@ -96,7 +99,7 @@
                             $comment = json_decode($response,true);
 
                             foreach($comment["posts"] as $object){?>
-                                <p class="objects">
+                                <p class="comments">
                                     <span>
                                         <h4><?php echo $object["content"],"</br>\n"; ?></h4>
                                         <h2><?php echo $object["date"],"</br>\n"; ?></h2>
