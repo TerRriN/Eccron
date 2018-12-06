@@ -101,8 +101,8 @@
                             foreach($comment["posts"] as $object){?>
                                 <p class="comments">
                                     <span>
-                                        <h4><?php echo $object["content"],"</br>\n"; ?></h4>
                                         <h2><?php echo $object["date"],"</br>\n"; ?></h2>
+                                        <h4><?php echo $object["content"],"</br>\n"; ?></h4>
                                     </span> 
                            <?php } ?>
                         </div>
