@@ -13,9 +13,10 @@ h1 {
 }
 
 h2 {
-  font-size: 1em;
+  font-size: 0.875em;
   opacity: 0.6;
   float: right;
+  margin-right: 1%;
 }
 
 h3 {
@@ -24,6 +25,9 @@ h3 {
 
 h4 {
   font-size: 0.8em;
+  border-radius: 15px 15px 15px 0px;
+  padding: 2em;
+  background-color: #718792;
 }
 
 .objects span {
@@ -33,14 +37,8 @@ h4 {
   border: 1px solid black;
 }
 
-.comments {
-  border-radius: 10px;
-  background-color: azure;
-  padding: 5px;
-}
-
 .comment-field {
-  max-height: 40%;
+  max-height: 25em;
   display: inline-block;
   overflow: scroll;
   width: 100%;
@@ -67,7 +65,7 @@ input {
 }
 
 input[type=text], select {
-  width: 85%;
+  width: 80%;
   padding: 12px 20px;
   display: inline-block;
   border: 1px solid #ccc;
