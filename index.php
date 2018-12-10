@@ -2,6 +2,7 @@
     session_start();
     include "utility/utility.php";
     $blog = 4;
+    $commentdate = time();
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,9 +16,9 @@
 <body>
     <?php
     /*Sends form as json to server, create-comment*/ 
-        if(isset($_POST["comment_content"]) && isset($_POST["comment_date"]) && isset($_POST["id"])){
-            $comment_content = $_POST["comment_content"];
-            $comment_date = $_POST["comment_date"];
+        if(isset($_POST["commentcontent"]) && isset($_POST["commentdate"]) && isset($_POST["id"])){
+            $commentcontent = $_POST["commentcontent"];
+            $commentdate = $_POST["commentdate"];
             $id = $_POST["id"];
             
             $response = myCurl::execute_curl("http://10.130.216.144/~theprovider/blog/php/create-comment.php",
@@ -25,8 +26,8 @@
                 "token"=>$_SESSION["token"],
                 "accountID"=>$_SESSION["account"],
                 "postID"=>$id,
-                "date"=>$comment_date,
-                "content"=>$content,
+                "date"=>$commentdate,
+                "content"=>$commentcontent,
                 "blogID"=>$blog
             ]);
                 var_dump($response);
@@ -74,11 +75,11 @@
         <form action="" method="post">
             <input name="title" placeholder="Title"> </br>
             <input name="datepost" type="date"> </br>
-            <textarea rows="10" cols="100" name="content" placeholder="Text here..."></textarea> </br>
+            <textarea rows="20" cols="51" name="content" placeholder="Text here..."></textarea> </br>
             <input class="create-submit" type="submit" value="Submit">   
         </form>
     </div>
-    
+   
     <div class="flow">
         <?php 
             $response = myCurl::execute_curl("http://10.130.216.144/~theprovider/blog/php/get-all-posts.php",["blogID"=>4]); 
@@ -93,8 +94,8 @@
                     
                     <div class="comment-field">
                         <form action="" method="post">
-                            <input type="text" name="comment-content" placeholder="Text">
-                            <input type="date" name="comment_date">
+                            <input type="text" name="commentcontent" placeholder="Text">
+                            <input type="hidden" name="commentdate" value="<?php echo $commentdate; ?>">
                             <input type="hidden" name="id" value="<?php echo $array["postID"]; ?>">
                             <input class="material-icons comment-submit" type="submit" value="done_outline">
                         </form>
@@ -102,7 +103,7 @@
                     <?php $response = myCurl::execute_curl("http://10.130.216.144/~theprovider/blog/php/get-all-comments.php",
                         ["blogID"=>$blog, "postID"=>$array["postID"]]);
                         $comment = json_decode($response,true);
-                        foreach($comment["posts"] as $object){?>
+                        foreach($comment["posts"] as $object){ ?>
                             <p class="comments">
                                 <span>
                                     <h2><?php echo $object["date"],"</br>\n"; ?></h2>
