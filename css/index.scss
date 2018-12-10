@@ -19,6 +19,7 @@ h2{
 }
 h3{
     font-size: 1.1em;
+    white-space: pre;
 }
 h4{
     font-size:0.8em;
@@ -67,8 +68,8 @@ input[type=text], select {
 }
 .create-submit{
     width: 20%;
-    background-color: #7b1fa2;
-    color: white;
+    background-color: $color_primary;
+    color: black;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
@@ -76,5 +77,8 @@ input[type=text], select {
     cursor: pointer;
 }
 .create-submit:hover {
-    background-color: #4a0072;
+    background-color: $color_primary_vl;
 }
+textarea{
+    white-space: pre;
+  }
