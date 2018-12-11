@@ -68,14 +68,14 @@
     <form action="" method="post">
         <input name="username" placeholder="Username"> </br>
         <input name="password" placeholder="Password"> </br>
-        <input class="create-submit" type="submit" value="Submit">
+        <input type="submit" value="Submit">
     </form>
 
     <div class="create">
         <form action="" method="post">
             <input name="title" placeholder="Title"> </br>
             <input name="datepost" type="date"> </br>
-            <textarea rows="20" cols="51" name="content" placeholder="Text here..."></textarea> </br>
+            <textarea name="content" placeholder="Text here..."></textarea> </br>
             <input class="create-submit" type="submit" value="Submit">   
         </form>
     </div>

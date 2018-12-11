@@ -14,12 +14,11 @@ h1{
 h2{
     font-size: 0.875em;
     opacity: 0.6;
-    float: right;
     margin-right: 1%;
 }
 h3{
     font-size: 1.1em;
-    white-space: pre;
+    white-space: pre-wrap;
 }
 h4{
     font-size:0.8em;
@@ -66,12 +65,21 @@ input[type=text], select {
     box-sizing: border-box;
     margin-left:1%;
 }
+textarea{
+    margin-left:50%;
+    transform: translateX(-49%);
+    white-space: pre;
+    font-size: 1.3em;
+    width:40%;
+    height: 50vh;
+}
 .create-submit{
+    margin-left:50%;
+    transform: translateX(-49%);
     width: 20%;
     background-color: $color_primary;
     color: black;
     padding: 14px 20px;
-    margin: 8px 0;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -79,6 +87,3 @@ input[type=text], select {
 .create-submit:hover {
     background-color: $color_primary_vl;
 }
-textarea{
-    white-space: pre;
-  }
