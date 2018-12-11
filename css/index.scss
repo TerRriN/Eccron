@@ -19,7 +19,7 @@ h2{
 }
 h3{
     font-size: 1.1em;
-    white-space: pre;
+    white-space: pre-wrap;
 }
 h4{
     font-size:0.8em;
@@ -80,5 +80,5 @@ input[type=text], select {
     background-color: $color_primary_vl;
 }
 textarea{
-    white-space: pre;
+    white-space: pre-wrap;
   }

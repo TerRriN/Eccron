@@ -21,7 +21,7 @@ h2 {
 
 h3 {
   font-size: 1.1em;
-  white-space: pre;
+  white-space: pre-wrap;
 }
 
 h4 {
@@ -91,7 +91,7 @@ input[type=text], select {
 }
 
 textarea {
-  white-space: pre;
+  white-space: pre-wrap;
 }
 
 /*# sourceMappingURL=index-sass.css.map */
