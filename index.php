@@ -87,9 +87,9 @@
             foreach($post["posts"] as $array){ ?>
                 <p class="objects">
                     <span>
-                        <h1><?php echo $array["title"],"</br>\n"; ?></h1>
-                        <h2><?php echo $array["date"],"</br>\n"; ?></h2>
-                        <h3><?php echo $array["content"],"</br>\n"; ?></h3>
+                        <h1><?php echo $array["title"]; ?></h1>
+                        <h2><?php echo $array["date"]; ?></h2>
+                        <h3><?php echo $array["content"]; ?></h3>
                     </span>
                     
                     <div class="comment-field">
