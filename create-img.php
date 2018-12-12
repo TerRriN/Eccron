@@ -66,4 +66,8 @@
         ];
     }
     echo json_encode($response);
+    $image = $_FILES["fileName"]["name"];
+    $img = $target_dir . $target_folder . "/" . $image;
+    echo $img;
+    echo '<img src="'.$img.'">';
 ?>
