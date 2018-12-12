@@ -2,7 +2,7 @@
     session_start();
     include "utility/utility.php";
     $blog = 4;
-    $commentdate = time();
+    $commentdate = date("Y-m-d");
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,23 +15,7 @@
 </head>
 <body>
     <?php
-    /*Sends form as json to server, create-comment*/ 
-        if(isset($_POST["commentcontent"]) && isset($_POST["commentdate"]) && isset($_POST["id"])){
-            $commentcontent = $_POST["commentcontent"];
-            $commentdate = $_POST["commentdate"];
-            $id = $_POST["id"];
-            
-            $response = myCurl::execute_curl("http://10.130.216.144/~theprovider/blog/php/create-comment.php",
-            [
-                "token"=>$_SESSION["token"],
-                "accountID"=>$_SESSION["account"],
-                "postID"=>$id,
-                "date"=>$commentdate,
-                "content"=>$commentcontent,
-                "blogID"=>$blog
-            ]);
-                var_dump($response);
-        }
+
     /*Sends form as json to server, generate-token*/
         if(isset($_POST["username"]) && isset($_POST["password"])){
             $username = $_POST["username"];
@@ -62,7 +46,22 @@
                 "date"=>$datepost,
                 "content"=>$content
             ]);
-            var_dump($response);
+        }
+    /*Sends form as json to server, create-comment*/ 
+        if(isset($_POST["commentcontent"]) && isset($_POST["commentdate"]) && isset($_POST["id"])){
+            $commentcontent = $_POST["commentcontent"];
+            $commentdate = $_POST["commentdate"];
+            $id = $_POST["id"];
+            
+            $response = myCurl::execute_curl("http://10.130.216.144/~theprovider/blog/php/create-comment.php",
+            [
+                "token"=>$_SESSION["token"],
+                "accountID"=>$_SESSION["account"],
+                "postID"=>$id,
+                "date"=>$commentdate,
+                "content"=>$commentcontent,
+                "blogID"=>$blog
+            ]);
         }
     ?>
     <form action="" method="post">
@@ -72,12 +71,26 @@
     </form>
 
     <div class="create">
+        <form action="create-img.php" method="post" enctype="multipart/form-data">
+            <input name="fileName" type="file" multiple>
+            <input type="submit" value="Submit">
+        </form>
+
         <form action="" method="post">
             <input name="title" placeholder="Title"> </br>
             <input name="datepost" type="date"> </br>
             <textarea name="content" placeholder="Text here..."></textarea> </br>
             <input class="create-submit" type="submit" value="Submit">   
         </form>
+
+        <table>
+            <tr>
+                <td>Bilder</td>
+            </tr>
+            <tr>
+                <td><?php  ?></td>
+            </tr>
+        </table>
     </div>
    
     <div class="flow">
@@ -106,7 +119,7 @@
                         foreach($comment["posts"] as $object){ ?>
                             <p class="comments">
                                 <span>
-                                    <h2><?php echo $object["date"],"</br>\n"; ?></h2>
+                                    <h5><?php echo $object["date"],"</br>\n"; ?></h5>
                                     <h4><?php echo $object["content"],"</br>\n"; ?></h4>
                                 </span> 
                             </p>
