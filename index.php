@@ -73,6 +73,7 @@
     <div class="create">
         <form action="create-img.php" method="post" enctype="multipart/form-data">
             <input name="fileName" type="file" multiple>
+            <input name="blog" type="hidden" value="<?php echo $blog ?>">
             <input type="submit" value="Submit">
         </form>
 
