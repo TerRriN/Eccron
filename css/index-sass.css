@@ -33,6 +33,7 @@ h4 {
   border-radius: 15px 15px 15px 0px;
   padding: 2em;
   background-color: #718792;
+  word-break: break-word;
 }
 
 h5 {
