@@ -26,6 +26,7 @@ h4{
     border-radius: 15px 15px 15px 0px;
     padding: $default_padding;
     background-color: $color_secondary_vl;
+    word-break: break-word;
 }
 .objects span{
     display: inline-block;
