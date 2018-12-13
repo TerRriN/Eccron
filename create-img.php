@@ -1,19 +1,11 @@
 <?php 
     try{
         include "utility/utility.php";
-        /*Input::validate($input,[
-            "accountID"=>null,
-            "token"=>20,
-            "title"=>50
-        ]);
-        if(!Token::verify($input["accountID"], $input["token"]))
-        {
-            throw new Exception("Felaktig token");
-        }
-        $connection = new DBConnection();
-        */
+        
         $target_dir = "img/";
-        $target_file = $target_dir . basename($_FILES["fileName"]["name"]);
+        $target_folder = $_POST["blog"];
+        
+        $target_file = $target_dir . $target_folder . "/" . basename($_FILES["fileName"]["name"]);
         $fileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
         //CHECKS IF FILE IS AN IMAGE
@@ -32,14 +24,22 @@
             throw new Exception("Filen existerar redan");
         }
 
-        //CHECK FILE SIZE
+        //CHECKS FILE SIZE
         if($_FILES["fileName"]["size"] > 500000){
             throw new Exception("Filen är för stor"); 
         }
 
-        //UPLOADS THE FILE
-        if(move_uploaded_file($_FILES["fileName"]["tmp_name"], $target_file) === false){
-            throw new Exception("Kunde inte ladda upp filen");
+        //CHECKS IF FOLDER EXISTS
+        if(is_dir($target_dir . $target_folder) === true){
+            //UPLOADS THE FILE
+            if(move_uploaded_file($_FILES["fileName"]["tmp_name"], $target_file) === false){
+                throw new Exception("Kunde inte ladda upp filen");
+            }
+        }else{
+            mkdir($target_dir . $target_folder);
+            if(move_uploaded_file($_FILES["fileName"]["tmp_name"], $target_file) === false){
+                throw new Exception("Kunde inte ladda upp filen");
+            }
         }
 
         $response = [
@@ -54,4 +54,8 @@
         ];
     }
     echo json_encode($response);
+    $image = $_FILES["fileName"]["name"];
+    $img = $target_dir . $target_folder . "/" . $image;
+    echo $img;
+    echo '<img src="'.$img.'">';
 ?>
