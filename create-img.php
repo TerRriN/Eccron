@@ -1,19 +1,7 @@
 <?php 
     try{
         include "utility/utility.php";
-        /*Input::validate($input,[
-            "accountID"=>null,
-            "token"=>20,
-            "title"=>50
-        ]);
-        if(!Token::verify($input["accountID"], $input["token"]))
-        {
-            throw new Exception("Felaktig token");
-        }
-        $connection = new DBConnection();
-        */
         
-        //target folder borde funka lika dant som target file
         $target_dir = "img/";
         $target_folder = $_POST["blog"];
         

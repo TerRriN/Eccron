@@ -1,8 +1,9 @@
 <?php
     session_start();
-    include "utility/utility.php";
     $blog = 4;
     $commentdate = date("Y-m-d");
+    include "utility/utility.php";
+    include "php/server-response.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,69 +15,19 @@
     <script src="js/jquery-3.3.1.min.js"></script>
 </head>
 <body>
-    <?php
-
-    /*Sends form as json to server, generate-token*/
-        if(isset($_POST["username"]) && isset($_POST["password"])){
-            $username = $_POST["username"];
-            $password = $_POST["password"];
-            $response = myCurl::execute_curl("http://10.130.216.144/~theprovider/generate-token.php",
-            [
-                "username"=>$username,
-                "password"=>$password,
-            ]);
-                var_dump($response);
-                $token = json_decode($response,true);
-                $_SESSION["token"] = $token["token"];
-                $account = json_decode($response,true);
-                $_SESSION["account"] = $account["accountID"];
-        }
-    /*Sends form as json to server, create-post*/
-        if(isset($_POST["title"]) && isset($_POST["datepost"]) && isset($_POST["content"])){
-            $title = $_POST["title"];
-            $datepost = $_POST["datepost"];
-            $content = $_POST["content"];
-           
-            $response = myCurl::execute_curl("http://10.130.216.144/~theprovider/blog/php/create-post.php",
-            [
-                "token"=>$_SESSION["token"],
-                "accountID"=>$_SESSION["account"],
-                "blogID"=>$blog,
-                "title"=>$title,
-                "date"=>$datepost,
-                "content"=>$content
-            ]);
-        }
-    /*Sends form as json to server, create-comment*/ 
-        if(isset($_POST["commentcontent"]) && isset($_POST["commentdate"]) && isset($_POST["id"])){
-            $commentcontent = $_POST["commentcontent"];
-            $commentdate = $_POST["commentdate"];
-            $id = $_POST["id"];
-            
-            $response = myCurl::execute_curl("http://10.130.216.144/~theprovider/blog/php/create-comment.php",
-            [
-                "token"=>$_SESSION["token"],
-                "accountID"=>$_SESSION["account"],
-                "postID"=>$id,
-                "date"=>$commentdate,
-                "content"=>$commentcontent,
-                "blogID"=>$blog
-            ]);
-        }
-    ?>
     <form action="" method="post">
         <input name="username" placeholder="Username"> </br>
         <input name="password" placeholder="Password"> </br>
         <input type="submit" value="Submit">
     </form>
 
-    <div class="create">
         <form action="create-img.php" method="post" enctype="multipart/form-data">
             <input name="fileName" type="file" multiple>
             <input name="blog" type="hidden" value="<?php echo $blog ?>">
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit" name="submit_file">
         </form>
 
+    <div class="create">
         <form action="" method="post">
             <input name="title" placeholder="Title"> </br>
             <input name="datepost" type="date"> </br>
@@ -89,7 +40,16 @@
                 <td>Bilder</td>
             </tr>
             <tr>
-                <td><?php  ?></td>
+                <td><?php
+                  $dirname = "img/4/";
+                  $images = scandir($dirname);
+                  $ignore = Array(".", "..");
+                  foreach($images as $curimg){
+                  if(!in_array($curimg, $ignore)) {
+                  echo "<img src='img/4/$curimg' width='30%' />";
+                  };
+                  }
+                    ?></td>
             </tr>
         </table>
     </div>
