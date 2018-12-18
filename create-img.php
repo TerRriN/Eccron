@@ -36,7 +36,8 @@
                 throw new Exception("Kunde inte ladda upp filen");
             }
         }else{
-            mkdir($target_dir . $target_folder);
+            //CREATES A NEW FOLDER AND UPLOADS FILE
+            mkdir($target_dir . $target_folder . "fold");
             if(move_uploaded_file($_FILES["fileName"]["tmp_name"], $target_file) === false){
                 throw new Exception("Kunde inte ladda upp filen");
             }

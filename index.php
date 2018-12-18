@@ -34,24 +34,23 @@
             <textarea name="content" placeholder="Text here..."></textarea> </br>
             <input class="create-submit" type="submit" value="Submit">   
         </form>
-
-        <table>
-            <tr>
-                <td>Bilder</td>
-            </tr>
-            <tr>
-                <td><?php
-                  $dirname = "img/4/";
-                  $images = scandir($dirname);
-                  $ignore = Array(".", "..");
-                  foreach($images as $curimg){
-                  if(!in_array($curimg, $ignore)) {
-                  echo "<img src='img/4/$curimg' width='30%' />";
-                  };
-                  }
-                    ?></td>
-            </tr>
-        </table>
+    <!--SELECT IMAGE-->
+        <form action="select-img.php" method="post">
+        <?php
+            $dir = "img/4/fold";
+            $ignore = Array(".", "..");
+            $a = scandir($dir);
+            foreach($a as $img){ 
+                if(!in_array($img, $ignore)){   
+                    echo "<input type='checkbox' value='$img' name='object[]'/>", $img, "</br>";
+                }
+            }
+        ?>
+        <input name="targetFolder" type="hidden" value="img/4/fold">
+        <input name="blog" type="hidden" value="<?php echo $blog ?>">
+        <input name="post" type="hidden" value="30">
+        <input type="submit" value="Submit">
+        </form>
     </div>
    
     <div class="flow">
@@ -65,6 +64,18 @@
                         <h2><?php echo $array["date"]; ?></h2>
                         <h3><?php echo $array["content"]; ?></h3>
                     </span>
+
+                    <?php
+                        if($array["postID"] == ){//scandir måste jämföra mappens namn med postID
+                        $dir = "img/4/30";
+                        $ignore = Array(".", "..");
+                        $a = scandir($dir);
+                        foreach($a as $img){ 
+                            if(!in_array($img, $ignore)){   
+                                echo "<img src='$img' width='30%'>";
+                            }
+                        }}
+                    ?>
                     
                     <div class="comment-field">
                         <form action="" method="post">
