@@ -66,7 +66,7 @@
                     </span>
 
                     <?php
-                        if($array["postID"] == ){//scandir måste jämföra mappens namn med postID
+                        if($array["postID"] == 28){//scandir måste jämföra mappens namn med postID
                         $dir = "img/4/30";
                         $ignore = Array(".", "..");
                         $a = scandir($dir);
