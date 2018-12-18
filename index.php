@@ -70,7 +70,7 @@
         <input type="submit" value="Submit">
         </form>
     </div>
-   
+    
     <div class="flow">
         <?php 
             $response = myCurl::execute_curl("http://10.130.216.144/~theprovider/blog/php/get-all-posts.php",["blogID"=>4]); 
@@ -85,21 +85,14 @@
 
                     <?php
                         if($array["postID"] == 28){//scandir måste jämföra mappens namn med postID
-                            $dir = "img/4/fold";
+                            $dir = "img/4/30";
                             $ignore = Array(".", "..");
                             $a = scandir($dir);
                             foreach($a as $img){ 
                                 if(!in_array($img, $ignore)){   
                                     echo "<img src='$dir/$img' width='30%'>";
                                 }
-=======
-                        $dir = "img/4/30";
-                        $ignore = Array(".", "..");
-                        $a = scandir($dir);
-                        foreach($a as $img){ 
-                            if(!in_array($img, $ignore)){   
-                                echo "<img src='$img' width='30%'>";
->>>>>>> 4197b23f2cfd3630d04552ca83d22b4b856642ea
+
                             }
                         }
                     ?>
