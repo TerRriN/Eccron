@@ -5,11 +5,11 @@
         $target_dir = "img/";
         $target_folder = $_POST["blog"];
         
-        $target_file = $target_dir . $target_folder . "/" . basename($_FILES["fileName"]["name"]);
+        $target_file = $target_dir . $target_folder . "/" . "fold" . "/" . basename($_FILES["fileName"]["name"]);
         $fileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
         //CHECKS IF FILE IS AN IMAGE
-        if($fileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
+        if($fileType != "jpg" && $fileType != "png" && $fileType != "jpeg" && $fileType != "gif" ) {
             throw new Exception("Felaktigt filformat");
         }
 
@@ -56,7 +56,7 @@
     }
     echo json_encode($response);
     $image = $_FILES["fileName"]["name"];
-    $img = $target_dir . $target_folder . "/" . $image;
+    $img = $target_dir . $target_folder . "/fold/" . $image;
     echo $img;
     echo '<img src="'.$img.'">';
 ?>
