@@ -65,7 +65,6 @@
                 }
             }
         ?>
-        <input name="targetFolder" type="hidden" value="img/4/fold">
         <input name="blog" type="hidden" value="<?php echo $blog ?>">
         <input name="post" type="hidden" value="30">
         <input type="submit" value="Submit">
@@ -85,7 +84,7 @@
                     </span>
 
                     <?php
-                        //if($array["postID"] == ){//scandir måste jämföra mappens namn med postID
+                        if($array["postID"] == 28){//scandir måste jämföra mappens namn med postID
                             $dir = "img/4/fold";
                             $ignore = Array(".", "..");
                             $a = scandir($dir);
@@ -94,7 +93,7 @@
                                     echo "<img src='$dir/$img' width='30%'>";
                                 }
                             }
-                        //}
+                        }
                     ?>
                     
                     <div class="comment-field">
