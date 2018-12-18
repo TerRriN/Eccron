@@ -25,7 +25,7 @@
             <form action="" method="post">
         <input name="username" placeholder="Username"> </br>
         <input name="password" placeholder="Password"> </br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Logga In">
     </form>
                 <!--<li><a href="#">länk1</a></li>
                 <li><a href="#">länk2</a></li>
@@ -92,6 +92,14 @@
                                 if(!in_array($img, $ignore)){   
                                     echo "<img src='$dir/$img' width='30%'>";
                                 }
+=======
+                        $dir = "img/4/30";
+                        $ignore = Array(".", "..");
+                        $a = scandir($dir);
+                        foreach($a as $img){ 
+                            if(!in_array($img, $ignore)){   
+                                echo "<img src='$img' width='30%'>";
+>>>>>>> 4197b23f2cfd3630d04552ca83d22b4b856642ea
                             }
                         }
                     ?>
