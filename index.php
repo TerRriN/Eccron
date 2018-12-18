@@ -66,15 +66,16 @@
                     </span>
 
                     <?php
-                        if($array["postID"] == ){//scandir måste jämföra mappens namn med postID
-                        $dir = "img/4/30";
-                        $ignore = Array(".", "..");
-                        $a = scandir($dir);
-                        foreach($a as $img){ 
-                            if(!in_array($img, $ignore)){   
-                                echo "<img src='$img' width='30%'>";
+                        //if($array["postID"] == ){//scandir måste jämföra mappens namn med postID
+                            $dir = "img/4/fold";
+                            $ignore = Array(".", "..");
+                            $a = scandir($dir);
+                            foreach($a as $img){ 
+                                if(!in_array($img, $ignore)){   
+                                    echo "<img src='$dir/$img' width='30%'>";
+                                }
                             }
-                        }}
+                        //}
                     ?>
                     
                     <div class="comment-field">
