@@ -5,14 +5,13 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  background-image: url(); /*funkar inte*/
   background-size: cover;
 }
 
 nav {
   width:100%;
   height: 60px;
-  background-color: red;
+  background-color: cyan;
   box-shadow: 0px 2px 8px 0px #333;
 }
 
@@ -28,6 +27,7 @@ nav p {
 nav ul {
   float: left;
 }
+
 .login-dropdown{
   background-color: #fff;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
@@ -41,14 +41,14 @@ nav ul li {
   float: left;
   list-style: none;
   position: relative;
-  background-color: red;
+  background-color: cyan;
 }
 
 nav ul li a {
   display : block;
   font-family: arial;
   color: #222;
-  font-size:14px;
+  font-size: 14px;
   padding: 22px 14px;
   text-decoration: none;
   cursor: pointer;

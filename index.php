@@ -22,12 +22,13 @@
         <li><a class = loginbtn>Logga in här</a></li>
         <li><a href="#">länkar</a>
             <ul class="login-dropdown">
-            <form action="" method="post">
-        <input name="username" placeholder="Username"> </br>
-        <input name="password" placeholder="Password"> </br>
-        <input type="submit" value="Submit">
-    </form>
-                <!--<li><a href="#">länk1</a></li>
+             <form action="" method="post">
+                <input name="username" placeholder="Username"> </br>
+                <input name="password" placeholder="Password"> </br>
+                <input type="submit" value="Submit">
+                </form>
+
+               <!-- <li><a href="#">länk1</a></li>
                 <li><a href="#">länk2</a></li>
                 <li><a href="#">länk3</a></li>
                 <li><a href="#">länk4</a></li> -->
@@ -85,7 +86,7 @@
                     </span>
 
                     <?php
-                        if($array["postID"] == ){//scandir måste jämföra mappens namn med postID
+                        if($array["postID"] == 28){  /*scandir måste jämföra mappens namn med postID*/
                         $dir = "img/4/30";
                         $ignore = Array(".", "..");
                         $a = scandir($dir);
