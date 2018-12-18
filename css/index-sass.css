@@ -1,86 +1,6 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
 body {
   font-family: "Roboto", sans-serif;
-  background-image: url(); /*funkar inte*/
-  background-size: cover;
 }
-
-nav {
-  width:100%;
-  height: 60px;
-  background-color: red;
-  box-shadow: 0px 2px 8px 0px #333;
-}
-
-nav p {
-  font-family: arial;
-  color: #222;
-  font-size:24px;
-  line-height: 55px;
-  float: left;
-  padding: 0px 20px;
-}
-
-nav ul {
-  float: left;
-}
-.login-dropdown{
-  background-color: #fff;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
-
-.show{
-  display:block;
-}
-
-nav ul li {
-  float: left;
-  list-style: none;
-  position: relative;
-  background-color: red;
-}
-
-nav ul li a {
-  display : block;
-  font-family: arial;
-  color: #222;
-  font-size:14px;
-  padding: 22px 14px;
-  text-decoration: none;
-  cursor: pointer;
-  user-select: none;
-}
-
-nav ul li ul {
-  display : none;
-  position: absolute;
-  background-clip: #fff;
-  padding: 10px;
-  border-radius: 0px 0px 4px 4px;
-}
-
-nav ul li:focus ul {
-  display : block;
-}
-
-
-nav ul li ul li {
-  width: 180px;
-  border-radius: 4px;
-}
-
-nav ul li ul li a {
-  padding: 8px 14px;
-}
-
-nav ul li ul li a:hover {
-  background-color: #f3f3f3;
-}
-
 
 .flow {
   position: absolute;
@@ -193,6 +113,82 @@ textarea {
 
 .create-submit:hover {
   background-color: #90cc00;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  width: 100%;
+  height: 60px;
+  background-color: #83e4e4;
+  box-shadow: 0px 2px 8px 0px #333;
+}
+
+nav p {
+  color: #222;
+  font-size: 24px;
+  line-height: 55px;
+  float: left;
+  padding: 0px 20px;
+}
+
+nav ul {
+  float: left;
+}
+
+.login-dropdown {
+  background-color: #f7f7f7;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  z-index: 5;
+}
+
+.show {
+  display: block;
+}
+
+nav ul li {
+  float: left;
+  list-style: none;
+  position: relative;
+  background-color: #85e4e4;
+}
+
+nav ul li a {
+  display: block;
+  color: #222;
+  font-size: 14px;
+  padding: 22px 14px;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+nav ul li ul {
+  display: none;
+  position: absolute;
+  background-clip: #fff;
+  padding: 10px;
+  border-radius: 0px 0px 4px 4px;
+}
+
+nav ul li:focus ul {
+  display: block;
+}
+
+nav ul li ul li {
+  width: 180px;
+  border-radius: 4px;
+}
+
+nav ul li ul li a {
+  padding: 8px 14px;
+}
+
+nav ul li ul li a:hover {
+  background-color: #f3f3f3;
 }
 
 /*# sourceMappingURL=index-sass.css.map */

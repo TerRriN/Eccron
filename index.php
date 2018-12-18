@@ -25,7 +25,7 @@
             <form action="" method="post">
         <input name="username" placeholder="Username"> </br>
         <input name="password" placeholder="Password"> </br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Logga In">
     </form>
                 <!--<li><a href="#">länk1</a></li>
                 <li><a href="#">länk2</a></li>
@@ -85,7 +85,7 @@
                     </span>
 
                     <?php
-                        if($array["postID"] == ){//scandir måste jämföra mappens namn med postID
+                        if($array["postID"] == 28){//scandir måste jämföra mappens namn med postID
                         $dir = "img/4/30";
                         $ignore = Array(".", "..");
                         $a = scandir($dir);
