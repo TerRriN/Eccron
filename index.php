@@ -14,12 +14,31 @@
     <link rel="stylesheet" type="text/css" href="css/index-sass.css">
     <script src="js/jquery-3.3.1.min.js"></script>
 </head>
-<body>
-    <form action="" method="post">
+
+<body class="body1">
+<nav>
+    <ul>   
+        <p>Eccron</p>
+        <li><a class = loginbtn>Logga in här</a></li>
+        <li><a href="#">länkar</a>
+            <ul class="login-dropdown">
+            <form action="" method="post">
         <input name="username" placeholder="Username"> </br>
         <input name="password" placeholder="Password"> </br>
         <input type="submit" value="Submit">
     </form>
+                <!--<li><a href="#">länk1</a></li>
+                <li><a href="#">länk2</a></li>
+                <li><a href="#">länk3</a></li>
+                <li><a href="#">länk4</a></li> -->
+            </ul> 
+        </li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+    </ul>
+</nav>
 
         <form action="create-img.php" method="post" enctype="multipart/form-data">
             <input name="fileName" type="file" multiple>
@@ -101,5 +120,12 @@
                 </p>
         <?php } ?> 
     </div>
+
+    <script>
+        $(".loginbtn").click(function(){
+  $(".login-dropdown").toggleClass("show");
+});
+    </script>
+
 </body>
 </html>
