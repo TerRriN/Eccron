@@ -13,7 +13,7 @@
     <script src="js/jquery-3.3.1.min.js"></script>
 </head>
 
-<!--<body class="body1">-->
+<body>
 <nav>
     <ul>   
         <p>Eccron</p>

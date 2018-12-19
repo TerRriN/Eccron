@@ -124,6 +124,10 @@ input[name=datepost] {
   margin-top: -2%;
 }
 
+input[type=file] {
+  left: 30vw;
+}
+
 textarea {
   white-space: pre;
   font-size: 1.3em;
@@ -172,12 +176,6 @@ nav p {
 
 nav ul {
   float: left;
-}
-
-.login-dropdown {
-  background-color: #f7f7f7;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  z-index: 5;
 }
 
 .show {
