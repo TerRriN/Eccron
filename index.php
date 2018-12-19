@@ -30,19 +30,8 @@
                 
             </ul>     
     </li>
-        <li><a href="#">länkar</a>
-                <!--<li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li> -->
-
-        </li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
-    </ul>
-</nav>
+        <li><a class="image-btn">ladda upp bilder</a>
+        <ul class="img-dropdown">
 
         <form action="create-img.php" method="post" enctype="multipart/form-data">
             <input name="fileName" type="file" multiple>
@@ -75,6 +64,14 @@
         <input type="submit" value="Submit">
         </form>
     </div>
+    
+        </ul>
+        </li>
+        
+    </ul>
+</nav>
+
+    
    
     <div class="flow">
         <?php 
@@ -127,6 +124,10 @@
     <script>
         $(".loginbtn").click(function(){
   $(".login-dropdown").toggleClass("show");
+});
+
+$(".image-btn").click(function(){
+  $(".img-dropdown").toggleClass("show");
 });
     </script>
 
