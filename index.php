@@ -15,62 +15,73 @@
     <script src="js/jquery-3.3.1.min.js"></script>
 </head>
 
-<body class="body1">
+<!--<body class="body1">-->
 <nav>
     <ul>   
         <p>Eccron</p>
-        <li><a class = loginbtn>Logga in här</a></li>
-        <li><a href="#">länkar</a>
+
+        <!--login formulär-->
+        <li><a class = login-btn>Logga in här</a>
             <ul class="login-dropdown">
-            <form action="" method="post">
-        <input name="username" placeholder="Username"> </br>
-        <input name="password" placeholder="Password"> </br>
-        <input type="submit" value="Logga In">
-    </form>
-                <!--<li><a href="#">länk1</a></li>
-                <li><a href="#">länk2</a></li>
-                <li><a href="#">länk3</a></li>
-                <li><a href="#">länk4</a></li> -->
-            </ul> 
+             <form action="" method="post">
+                <input name="username" placeholder="Username"> </br>
+                <input name="password" placeholder="Password"> </br>
+                <input type="submit" value="Submit">
+             </form> 
+            </ul>     
         </li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
+        
+        <!--create image-->
+        <li><a class="image-btn">Skapa bilder</a>
+            <ul class="img-dropdown">
+
+                <form action="create-img.php" method="post" enctype="multipart/form-data">
+                    <input name="fileName" type="file" multiple>
+                    <input name="blog" type="hidden" value="<?php echo $blog ?>">
+                    <input type="submit" value="Submit" name="submit_file">
+                </form>
+            </ul>
+        </li>
+         
+        <!--create post-->
+        <li><a class="post-btn">Skapa post</a>
+            <ul class="post-dropdown">
+                <form action="" method="post">
+                    <input name="title" placeholder="titel"></br>
+                    <input name="datepost" type="date"></br>
+                    <textarea name="content" placeholder="Text here..."></textarea> </br>
+                    <input class="create-submit" type="submit" value="Submit">   
+                </form>
+            </ul>
+        </li>       
+            <!--SELECT IMAGE-->
+            <li><a class="select-btn">visa bilder</a>
+                <ul class="select-dropdown">
+            <form action="select-img.php" method="post">
+            <?php
+                $dir = "img/4/fold";
+                $ignore = Array(".", "..");
+                $a = scandir($dir);
+                foreach($a as $img){ 
+                    if(!in_array($img, $ignore)){   
+                        echo "<input type='checkbox' value='$img' name='object[]'/>", $img, "</br>";
+                    }
+                }
+            ?>
+                <input name="targetFolder" type="hidden" value="img/4/fold">
+                <input name="blog" type="hidden" value="<?php echo $blog ?>">
+                <input name="post" type="hidden" value="30">
+                <input type="submit" value="Submit">
+            </form>
+            </div>
+            </ul>
+        
+            </li>
     </ul>
 </nav>
 
-        <form action="create-img.php" method="post" enctype="multipart/form-data">
-            <input name="fileName" type="file" multiple>
-            <input name="blog" type="hidden" value="<?php echo $blog ?>">
-            <input type="submit" value="Submit" name="submit_file">
-        </form>
-
-    <div class="create">
-        <form action="" method="post">
-            <input name="title" placeholder="Title"> </br>
-            <input name="datepost" type="date"> </br>
-            <textarea name="content" placeholder="Text here..."></textarea> </br>
-            <input class="create-submit" type="submit" value="Submit">   
-        </form>
-    <!--SELECT IMAGE-->
-        <form action="select-img.php" method="post">
-        <?php
-            $dir = "img/4/fold";
-            $ignore = Array(".", "..");
-            $a = scandir($dir);
-            foreach($a as $img){ 
-                if(!in_array($img, $ignore)){   
-                    echo "<input type='checkbox' value='$img' name='object[]'/>", $img, "</br>";
-                }
-            }
-        ?>
-        <input name="blog" type="hidden" value="<?php echo $blog ?>">
-        <input name="post" type="hidden" value="30">
-        <input type="submit" value="Submit">
-        </form>
-    </div>
     
+   
     <div class="flow">
         <?php 
             $response = myCurl::execute_curl("http://10.130.216.144/~theprovider/blog/php/get-all-posts.php",["blogID"=>4]); 
@@ -84,15 +95,13 @@
                     </span>
 
                     <?php
-                        if($array["postID"] == 28){//scandir måste jämföra mappens namn med postID
-                            $dir = "img/4/30";
-                            $ignore = Array(".", "..");
-                            $a = scandir($dir);
-                            foreach($a as $img){ 
-                                if(!in_array($img, $ignore)){   
-                                    echo "<img src='$dir/$img' width='30%'>";
-                                }
-
+                        if($array["postID"] == 28){  /*scandir måste jämföra mappens namn med postID*/
+                        $dir = "img/4/30";
+                        $ignore = Array(".", "..");
+                        $a = scandir($dir);
+                        foreach($a as $img){ 
+                            if(!in_array($img, $ignore)){   
+                                echo "<img src='$img' width='30%'>";
                             }
                         }
                     ?>
@@ -122,8 +131,20 @@
     </div>
 
     <script>
-        $(".loginbtn").click(function(){
+$(".login-btn").click(function(){
   $(".login-dropdown").toggleClass("show");
+});
+
+$(".image-btn").click(function(){
+  $(".img-dropdown").toggleClass("show");
+});
+
+$(".post-btn").click(function(){
+  $(".post-dropdown").toggleClass("show");
+});
+
+$(".select-btn").click(function(){
+  $(".select-dropdown").toggleClass("show");
 });
     </script>
 
