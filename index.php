@@ -4,14 +4,12 @@
     $commentdate = date("Y-m-d");
     include "utility/utility.php";
     include "php/server-response.php";
+    include "php/links.php";
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/index-sass.css">
     <script src="js/jquery-3.3.1.min.js"></script>
 </head>
 
@@ -19,7 +17,7 @@
 <nav>
     <ul>   
         <p>Eccron</p>
-        <li><a class = loginbtn>Logga in här</a></li>
+        <li><a class="loginbtn material-icons md-36">account_circle</a></li>
         <li><a href="#">länkar</a>
             <ul class="login-dropdown">
             <form action="" method="post">
@@ -77,11 +75,11 @@
             $post = json_decode($response,true);
             foreach($post["posts"] as $array){ ?>
                 <p class="objects">
-                    <span>
+                    <div class="post">
                         <h1><?php echo $array["title"]; ?></h1>
                         <h2><?php echo $array["date"]; ?></h2>
                         <h3><?php echo $array["content"]; ?></h3>
-                    </span>
+                    </div>
 
                     <?php
                         if($array["postID"] == 28){//scandir måste jämföra mappens namn med postID
@@ -92,29 +90,22 @@
                                 if(!in_array($img, $ignore)){   
                                     echo "<img src='$dir/$img' width='30%'>";
                                 }
-
                             }
                         }
                     ?>
-                    
                     <div class="comment-field">
                         <form action="" method="post">
-                            <input type="text" name="commentcontent" placeholder="Text">
+                            <input name="commentcontent" placeholder="Text">
                             <input type="hidden" name="commentdate" value="<?php echo $commentdate; ?>">
                             <input type="hidden" name="id" value="<?php echo $array["postID"]; ?>">
-                            <input class="material-icons comment-submit" type="submit" value="done_outline">
+                            <input class="material-icons md-36 comment-submit" type="submit" value="send">
                         </form>
-
-                    <?php $response = myCurl::execute_curl("http://10.130.216.144/~theprovider/blog/php/get-all-comments.php",
-                        ["blogID"=>$blog, "postID"=>$array["postID"]]);
-                        $comment = json_decode($response,true);
-                        foreach($comment["posts"] as $object){ ?>
-                            <p class="comments">
-                                <span>
-                                    <h5><?php echo $object["date"],"</br>\n"; ?></h5>
-                                    <h4><?php echo $object["content"],"</br>\n"; ?></h4>
-                                </span> 
-                            </p>
+                        <?php $response = myCurl::execute_curl("http://10.130.216.144/~theprovider/blog/php/get-all-comments.php",
+                            ["blogID"=>$blog, "postID"=>$array["postID"]]);
+                            $comment = json_decode($response,true);
+                            foreach($comment["posts"] as $object){ ?>
+                                <h4><?php echo $object["content"],"</br>\n"; ?></h4>
+                                <h5><?php echo $object["date"],"</br>\n"; ?></h5>
                         <?php } ?>
                     </div>
                 </p>
