@@ -12,7 +12,6 @@
     <meta charset="utf-8" />
     <script src="js/jquery-3.3.1.min.js"></script>
 </head>
-
 <body>
 <nav>
     <ul>   
@@ -26,11 +25,21 @@
              </form> 
             </ul>     
         </li>
-        
+            
+        <!--create post-->
+        <li><a class="post-btn material-icons md-36">note_add</a>
+        <ul class="post-dropdown">
+            <form action="" method="post">
+                <input name="title" placeholder="titel"></br>
+                <input name="datepost" type="date"></br>
+                <textarea name="content" placeholder="Text here..."></textarea> </br>
+                <input class="create-submit" type="submit" value="Submit">   
+            </form>
+        </ul>
+    </li>       
         <!--create image-->
-        <li><a class="image-btn">Skapa bilder</a>
+        <li><a class="image-btn material-icons md-36">add_photo_alternate</a>
             <ul class="img-dropdown">
-
                 <form action="create-img.php" method="post" enctype="multipart/form-data">
                     <input name="fileName" type="file" multiple>
                     <input name="blog" type="hidden" value="<?php echo $blog ?>">
@@ -38,20 +47,8 @@
                 </form>
             </ul>
         </li>
-         
-        <!--create post-->
-        <li><a class="post-btn">Skapa post</a>
-            <ul class="post-dropdown">
-                <form action="" method="post">
-                    <input name="title" placeholder="titel"></br>
-                    <input name="datepost" type="date"></br>
-                    <textarea name="content" placeholder="Text here..."></textarea> </br>
-                    <input class="create-submit" type="submit" value="Submit">   
-                </form>
-            </ul>
-        </li>       
             <!--SELECT IMAGE-->
-            <li><a class="select-btn">visa bilder</a>
+            <li><a class="select-btn material-icons md-36">photo_library</a>
                 <ul class="select-dropdown">
             <form action="select-img.php" method="post">
             <?php
