@@ -103,7 +103,7 @@
                             if(!in_array($img, $ignore)){   
                                 echo "<img src='$img' width='30%'>";
                             }
-                        }}
+                        }
                     ?>
                     
                     <div class="comment-field">
