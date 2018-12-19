@@ -91,6 +91,10 @@ input[name=datepost] {
   margin-top: -2%;
 }
 
+input[type=file] {
+  left: 30vw;
+}
+
 textarea {
   white-space: pre;
   font-size: 1.3em;

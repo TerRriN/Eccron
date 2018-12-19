@@ -19,19 +19,17 @@
 <nav>
     <ul>   
         <p>Eccron</p>
-        <li><a class = loginbtn>Logga in här</a></li>
-        <li><a href="#">länkar</a>
-            <ul class="login-dropdown">
+        <li><a class = loginbtn>Logga in här</a>
+         <ul class="login-dropdown">
             <form action="" method="post">
         <input name="username" placeholder="Username"> </br>
         <input name="password" placeholder="Password"> </br>
         <input type="submit" value="Logga In">
     </form>
-                <!--<li><a href="#">länk1</a></li>
-                <li><a href="#">länk2</a></li>
-                <li><a href="#">länk3</a></li>
-                <li><a href="#">länk4</a></li> -->
-            </ul> 
+    </ul> 
+        </li>
+        <li><a href="#">länkar</a>
+           
         </li>
         <li><a href="#"></a></li>
         <li><a href="#"></a></li>
