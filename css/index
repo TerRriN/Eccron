@@ -1,0 +1,146 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.login-dropdown {
+  background-color: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  z-index: 5;
+}
+
+.img-dropdown {
+  background-color: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  z-index: 5;
+}
+
+.post-dropdown {
+  background-color: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  z-index: 5;
+}
+
+.select-dropdown {
+  background-color: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  z-index: 5;
+}
+
+.show {
+  display: block;
+}
+
+.flow {
+  position: absolute;
+  width: 40vw;
+  left: 30vw;
+}
+
+h1 {
+  float: left;
+  font-size: 2em;
+}
+
+h2 {
+  float: left;
+  padding-left: 70%;
+  padding-top: 3%;
+  font-size: 0.875em;
+  opacity: 0.6;
+  margin-right: 1%;
+}
+
+h3 {
+  float: left;
+  font-size: 1.1em;
+  white-space: pre-wrap;
+}
+
+h4 {
+  font-size: 0.8em;
+  border-radius: 15px 15px 15px 0px;
+  padding: 2em;
+  background-color: #718792;
+  word-break: break-word;
+}
+
+h5 {
+  font-size: 0.8em;
+  opacity: 0.6;
+  float: right;
+  margin-right: 1%;
+}
+
+.objects span {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.comment-field {
+  max-height: 25em;
+  display: inline-block;
+  overflow: scroll;
+  width: 100%;
+  background-color: #d4d4d4;
+}
+
+.comment-submit {
+  width: 9%;
+  font-size: 1.5em;
+  border-radius: 50%;
+  float: right;
+  margin-right: 1%;
+  margin-top: 0.5%;
+}
+
+input {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.create {
+  margin-left: 50%;
+  transform: translateX(-49%);
+  width: 40%;
+}
+
+input[name=title] {
+  float: left;
+}
+
+input[name=datepost] {
+  float: right;
+  margin-top: -2%;
+}
+
+textarea {
+  white-space: pre;
+  font-size: 1.3em;
+  height: 50vh;
+  width: 100%;
+  resize: vertical;
+}
+
+.create-submit {
+  width: 40%;
+  background-color: #c6ff00;
+  color: black;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 50%;
+  transform: translateX(-49%);
+}
+
+.create-submit:hover {
+  background-color: #90cc00;
+}
+
+/*# sourceMappingURL=index..map */

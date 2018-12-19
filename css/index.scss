@@ -3,6 +3,35 @@
 body{
     font-family: 'Roboto', sans-serif;
 }
+
+.login-dropdown{
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    z-index: 5;
+  }
+  
+.img-dropdown{
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    z-index: 5;
+  }
+  
+.post-dropdown{
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    z-index: 5;
+  }
+  
+.select-dropdown{
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    z-index: 5
+  }
+  
+.show{
+    display:block;
+  }
+
 .flow{
     position: absolute;
     width:40vw;
@@ -82,6 +111,7 @@ input{
     transform: translateX(-49%);
     width:40%;
 }
+
 input[name=title]{
     float:left;
 }
