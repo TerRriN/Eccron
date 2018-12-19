@@ -30,7 +30,7 @@
                 
             </ul>     
     </li>
-        <li><a class="image-btn">ladda upp bilder</a>
+        <li><a class="image-btn">Skapa bilder</a>
         <ul class="img-dropdown">
 
         <form action="create-img.php" method="post" enctype="multipart/form-data">
