@@ -91,11 +91,12 @@ input[name=commentcontent]{
 }
 .comment-submit{
     border:none;
-    color: $color_secondary;
+    color: white;
     background-color:$color_primary_vl;
     font-weight: bolder;
     width:7%;
     margin:1% -1%;
+    cursor: pointer;
 }
 
 
@@ -203,3 +204,10 @@ nav ul li ul li a:hover{
 .material-icons.md-24 { font-size: 24px; }
 .material-icons.md-36 { font-size: 36px; }
 .material-icons.md-48 { font-size: 48px; }
+.material-icons{
+    color:white;
+    transition:0.3s;
+}
+.material-icons:hover{
+    color:$color_secondary !important;
+}
