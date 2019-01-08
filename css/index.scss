@@ -11,6 +11,7 @@ body{
     position: absolute;
     top: 30px;
     left: 30px;
+    width: 15vw;
   }
   
 .img-dropdown{
@@ -23,6 +24,7 @@ body{
     background-color: #fff;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     z-index: 5;
+    width: 40vw;
   }
   
 .select-dropdown{
@@ -115,9 +117,15 @@ input{
     transform: translateX(-49%);
     width:40%;
 }
-
+input[name=username]{
+    width: 15vw;
+}
+input[name=password]{
+    width: 15vw;
+}
 input[name=title]{
     float:left;
+    padding: 1em;
 }
 input[name=datepost]{
     float: right;
