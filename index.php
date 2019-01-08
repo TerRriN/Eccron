@@ -123,7 +123,7 @@
                 ?>
                 <div class="comment-field">
                     <form action="" method="post">
-                        <input name="commentcontent" placeholder="Text">
+                        <input type="text" maxlength="90" name="commentcontent" placeholder="Text">
                         <input type="hidden" name="commentdate" value="<?php echo $commentdate; ?>">
                         <input type="hidden" name="id" value="<?php echo $array["postID"]; ?>">
                         <input class="material-icons md-36 comment-submit" type="submit" value="send">
