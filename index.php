@@ -183,19 +183,34 @@
     <script>
 $(".login-btn").click(function(){
   $(".login-dropdown").toggleClass("show");
+  $(".img-dropdown").removeClass("show");
+  $(".post-dropdown").removeClass("show");
+  $(".select-dropdown").removeClass("show");
+
 });
 
 $(".image-btn").click(function(){
   $(".img-dropdown").toggleClass("show");
+  $(".post-dropdown").removeClass("show");
+  $(".select-dropdown").removeClass("show");
+  $(".login-dropdown").removeClass("show");
+
 });
 
 $(".post-btn").click(function(){
   $(".post-dropdown").toggleClass("show");
+  $(".img-dropdown").removeClass("show");
+  $(".select-dropdown").removeClass("show");
+  $(".login-dropdown").removeClass("show");
 });
 
 $(".select-btn").click(function(){
   $(".select-dropdown").toggleClass("show");
+  $(".img-dropdown").removeClass("show");
+  $(".post-dropdown").removeClass("show");
+  $(".login-dropdown").removeClass("show");
 });
+
     </script>
 
 <script>
