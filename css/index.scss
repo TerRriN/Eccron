@@ -5,9 +5,12 @@ body{
 }
 
 .login-dropdown{
-    background-color: #fff;
+    background-color: white;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     z-index: 5;
+    position: absolute;
+    top: 30px;
+    left: 30px;
   }
   
 .img-dropdown{
@@ -150,6 +153,7 @@ textarea{
 .create-submit:hover {
     background-color: $color_primary_vl;
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -173,7 +177,9 @@ nav p {
 nav ul{
     float: left;
 }
-
+nav ul ul{
+    display: none;
+}
 .show{
     display: block;
 }

@@ -18,7 +18,7 @@
         <p>Eccron</p>
         <li><a class="loginbtn material-icons md-36">account_circle</a></li>
             <ul class="login-dropdown">
-             <form action="" method="post">
+             <form action="" method="post" class="login-dropdown">
                 <input name="username" placeholder="Username"> </br>
                 <input name="password" placeholder="Password"> </br>
                 <input type="submit" value="Submit">
@@ -170,6 +170,10 @@ $(".post-btn").click(function(){
 
 $(".select-btn").click(function(){
   $(".select-dropdown").toggleClass("show");
+});
+
+$(".loginbtn").click(function(){
+  $(".login-dropdown").toggleClass("show");
 });
     </script>
 
