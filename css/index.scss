@@ -32,10 +32,14 @@ body{
     display:block;
 }
 
+//POSTS
 .flow{
     position: absolute;
     width:40vw;
     left:30vw;
+}
+.post{
+    margin-top:5vh;
 }
 h1{
     float: left;
@@ -58,10 +62,8 @@ h4{
     font-size:0.9em;
     word-break: break-word;
     padding:1% 1%;
-    color:white;
 }
 h5{
-    color:white;
     font-size:0.8em;
     opacity:0.6;
     padding:0% 1%;
@@ -75,24 +77,25 @@ h5{
     margin-bottom: 5%;
 }
 
-
 //COMENTFIELD
 .comment-field{
     display: inline-block;
     width:100%;
-    background-color:$color_primary_vl;
+    box-shadow:0px 2px 10px;
+    margin-top:2vh;
 }
 input[name=commentcontent]{
-    padding:7px;
+    padding:8px;
     width:90%;
     float:left;
     font-size: 1em;
     margin:1% 1%;
+    border:1px solid gray;
 }
 .comment-submit{
     border:none;
-    color: white;
-    background-color:$color_primary_vl;
+    color:$color_primary_vl !important;
+    background-color: white;
     font-weight: bolder;
     width:7%;
     margin:1% -1%;
@@ -100,10 +103,11 @@ input[name=commentcontent]{
 .load{
     width:100%;
     text-align: center;
-    background-color:$color_primary_vl;
+    background-color:white;
+    color:$color_primary_vl !important;
 }
 .load:hover{
-    background-color:white;
+    background-color:$color_primary_vl;
 }
 .hide{
     display:none;
