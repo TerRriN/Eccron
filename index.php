@@ -106,13 +106,50 @@
                             <input type="hidden" name="id" value="<?php echo $array["postID"]; ?>">
                             <input class="material-icons md-36 comment-submit" type="submit" value="send">
                         </form>
+                        <!--Display 5 comments-->
                         <?php $response = myCurl::execute_curl("http://10.130.216.144/~theprovider/blog/php/get-all-comments.php",
                             ["blogID"=>$blog, "postID"=>$array["postID"]]);
                             $comment = json_decode($response,true);
-                            foreach($comment["posts"] as $object){ ?>
-                                <h4><?php echo $object["content"],"</br>\n"; ?></h4>
-                                <h5><?php echo $object["date"],"</br>\n"; ?></h5>
-                        <?php } ?>
+                            $x = 1;
+                            foreach($comment["posts"] as $object){ 
+                                if($x <= 5){ ?>
+                                    <h4><?php echo $object["content"],"</br>\n"; ?></h4>
+                                    <h5><?php echo $object["date"],"</br>\n"; ?></h5>
+                                <?php $x++;
+                                }else{break;}
+                            } ?>
+                        
+                        <!--Display all comments-->
+                            <form action="" method="post">
+                                <input type="hidden" name="id" value="<?php echo $array["postID"]; ?>">
+                                <input type="submit" name="displayAll" class="load displayAll material-icons md-36" value="keyboard_arrow_down">
+                            </form>
+                            <?php
+                                $ignoreObj = array_slice($comment["posts"], 0, 5);
+                                if(isset($_POST["displayAll"]) && isset($_POST["id"])){
+                                    foreach($comment["posts"] as $object){ 
+                                        if(!in_array($object, $ignoreObj)){ ?> 
+                                            <h4><?php echo $object["content"],"</br>\n"; ?></h4>
+                                            <h5><?php echo $object["date"],"</br>\n"; ?></h5>
+                                    <?php }
+                                    } 
+                                } ?>
+                            
+                        <!--Display less comments-->
+                            <form action="" method="post">
+                                <input type="hidden" name="id" value="<?php echo $array["postID"]; ?>">
+                                <input type="submit" name="hideAll" class="load hideAll material-icons md-36" value="keyboard_arrow_up">
+                            </form>
+                            <?php
+                                $hideObj = $comment["posts"];
+                                if(isset($_POST["hideAll"]) && isset($_POST["id"])){
+                                    foreach($comment["posts"] as $object){ 
+                                        if(!in_array($object, $hideObj)){ ?> 
+                                            <h4><?php echo $object["content"],"</br>\n"; ?></h4>
+                                            <h5><?php echo $object["date"],"</br>\n"; ?></h5>
+                                    <?php }
+                                    }
+                                } ?>
                     </div>
                 </p>
         <?php } ?> 
@@ -135,6 +172,17 @@ $(".select-btn").click(function(){
   $(".select-dropdown").toggleClass("show");
 });
     </script>
+
+<script>
+    $(".displayAll").click(function(){
+        $(".displayAll").toggleClass("hide");
+        $(".hideAll").toggleClass("hide");
+    });
+    $(".hideAll").click(function(){
+        $(".displayAll").toggleClass("hide");
+        $(".hideAll").toggleClass("hide");
+    });
+</script>
 
 </body>
 </html>
