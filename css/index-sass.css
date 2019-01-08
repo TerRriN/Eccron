@@ -3,12 +3,9 @@ body {
 }
 
 .login-dropdown {
-  background-color: white;
+  background-color: #fff;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   z-index: 5;
-  position: absolute;
-  top: 30px;
-  left: 30px;
 }
 
 .img-dropdown {
@@ -180,10 +177,6 @@ nav p {
 
 nav ul {
   float: left;
-}
-
-nav ul ul {
-  display: none;
 }
 
 .show {
