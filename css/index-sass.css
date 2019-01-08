@@ -63,9 +63,11 @@ h4 {
   font-size: 0.9em;
   word-break: break-word;
   padding: 1% 1%;
+  color: white;
 }
 
 h5 {
+  color: white;
   font-size: 0.8em;
   opacity: 0.6;
   padding: 0% 1%;
@@ -81,9 +83,7 @@ h5 {
 }
 
 .comment-field {
-  max-height: 25em;
   display: inline-block;
-  overflow-y: scroll;
   width: 100%;
   background-color: #4f5b62;
 }
@@ -103,13 +103,25 @@ input[name=commentcontent] {
   font-weight: bolder;
   width: 7%;
   margin: 1% -1%;
-  cursor: pointer;
+}
+
+.load {
+  width: 100%;
+  text-align: center;
+  background-color: #4f5b62;
+}
+
+.load:hover {
+  background-color: white;
+}
+
+.hide {
+  display: none;
 }
 
 input {
   display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: none;
   box-sizing: border-box;
 }
 
@@ -247,6 +259,7 @@ nav ul li ul li a:hover {
 .material-icons {
   color: white;
   transition: 0.3s;
+  cursor: pointer;
 }
 
 .material-icons:hover {
