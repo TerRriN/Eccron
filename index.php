@@ -36,19 +36,21 @@
         <p>Eccron</p>
 
         <li>
-        <a class="login-btn material-icons md-36">account_circle</a>
+        <a class="select-btn material-icons md-36">account_circle</a>
             <ul class="login-dropdown">
+            <li>
              <form action="" method="post">
                 <input name="username" placeholder="Username"> </br>
                 <input name="password" placeholder="Password"> </br>
                 <input type="submit" value="Submit">
              </form> 
+             </li>
             </ul>     
         </li>
             
         <!--create post-->
         <li>
-        <a class="post-btn material-icons md-36">note_add</a>
+        <a class="select-btn material-icons md-36">note_add</a>
         <ul class="post-dropdown">
             <form action="" method="post">
                 <input name="title" placeholder="titel"></br>
@@ -61,7 +63,7 @@
 
         <!--create image-->
         <li>
-        <a class="image-btn material-icons md-36">add_photo_alternate</a>
+        <a class="select-btn material-icons md-36">add_photo_alternate</a>
             <ul class="img-dropdown">
                 <form action="create-img.php" method="post" enctype="multipart/form-data">
                     <input name="fileName" type="file" multiple>
@@ -181,37 +183,28 @@
     </div>
 
     <script>
-$(".login-btn").click(function(){
-  $(".login-dropdown").toggleClass("show");
-  $(".img-dropdown").removeClass("show");
-  $(".post-dropdown").removeClass("show");
-  $(".select-dropdown").removeClass("show");
 
-});
-
-$(".image-btn").click(function(){
-  $(".img-dropdown").toggleClass("show");
-  $(".post-dropdown").removeClass("show");
-  $(".select-dropdown").removeClass("show");
-  $(".login-dropdown").removeClass("show");
-
-});
-
-$(".post-btn").click(function(){
-  $(".post-dropdown").toggleClass("show");
-  $(".img-dropdown").removeClass("show");
-  $(".select-dropdown").removeClass("show");
-  $(".login-dropdown").removeClass("show");
-});
 
 $(".select-btn").click(function(){
-  $(".select-dropdown").toggleClass("show");
-  $(".img-dropdown").removeClass("show");
-  $(".post-dropdown").removeClass("show");
-  $(".login-dropdown").removeClass("show");
+  $(".post-dropdown").hide();
+  $(".img-dropdown").hide();
+  $(".select-dropdown").hide();
+  $(".login-dropdown").hide();
+  $(this).parent().find('ul').show();
 });
 
-    </script>
+
+$(document).click(function(e) {
+    if (!$(e.target).hasClass("select-btn") ) {     
+        $(".post-dropdown").hide();
+        $(".img-dropdown").hide();
+        $(".select-dropdown").hide();
+        $(".login-dropdown").hide();
+    }
+});
+
+
+ </script>
 
 <script>
     $(".displayAll").click(function(){
