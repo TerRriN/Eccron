@@ -46,4 +46,16 @@
                 "blogID"=>$blog
             ]);
         }
+    /*Sends form as json to server, change-title*/
+        if(isset($_POST["blogTitle"])){
+            $blogTitle = $_POST["blogTitle"];
+
+            $response = myCurl::execute_curl("http://10.130.216.144/~theprovider/blog/php/change-title.php",
+            [
+                "token"=>$_SESSION["token"],
+                "accountID"=>$_SESSION["account"],
+                "title"=>$blogTitle,
+                "blogID"=>$blog
+            ]);
+        }
 ?>

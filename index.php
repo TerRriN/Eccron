@@ -45,7 +45,8 @@
              </form> 
             </ul>     
         </li>
-            
+    
+    <?php if($_SESSION["account"] == 21){ ?>         
         <!--create post-->
         <li>
         <a class="post-btn material-icons md-36">note_add</a>
@@ -95,6 +96,20 @@
         
             </li>
     </ul>
+    <?php } ?>
+        
+        <?php $response = myCurl::execute_curl("http://10.130.216.144/~theprovider/blog/php/get-title.php",["blogID"=>4]);
+        $blogTitle = json_decode($response,true); ?>
+        <h6><?php echo $blogTitle['title'][0]['title']; ?></h6>
+
+    <?php if($_SESSION["account"] == 21){ ?>
+        <button class="changeTitleBtn material-icons">edit</button>
+        <button class="cancelBtn material-icons hide">clear</button>
+        <form class="edit hide" action="" method="post">
+            <input class="changeTitleTxt" maxlength="42" name="blogTitle" value="<?php echo $blogTitle['title'][0]['title']; ?>">
+            <input class="changeTitleBtn hide material-icons" type="submit" value="done">
+        </form>
+    <?php } ?>
 </nav>
 
     
@@ -123,7 +138,7 @@
                 ?>
                 <div class="comment-field">
                     <form action="" method="post">
-                        <input name="commentcontent" placeholder="Text">
+                        <input type="text" maxlength="90" name="commentcontent" placeholder="Text">
                         <input type="hidden" name="commentdate" value="<?php echo $commentdate; ?>">
                         <input type="hidden" name="id" value="<?php echo $array["postID"]; ?>">
                         <input class="material-icons md-36 comment-submit" type="submit" value="send">
@@ -206,6 +221,18 @@ $(".select-btn").click(function(){
     $(".hideAll").click(function(){
         $(".displayAll").toggleClass("hide");
         $(".hideAll").toggleClass("hide");
+    });
+</script>
+<script>
+    $(".changeTitleBtn").click(function(){
+        $(".edit").toggleClass("hide");
+        $(".changeTitleBtn").toggleClass("hide");
+        $(".cancelBtn").toggleClass("hide");
+    });
+    $(".cancelBtn").click(function(){
+        $(".edit").toggleClass("hide");
+        $(".changeTitleBtn").toggleClass("hide");
+        $(".cancelBtn").toggleClass("hide");
     });
 </script>
 

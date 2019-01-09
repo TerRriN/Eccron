@@ -70,6 +70,13 @@ h5{
     padding-bottom: 1%;
     border-bottom:1px solid black;
 }
+h6{
+    position:absolute;
+    font-size:2em;
+    margin-left: 60%;
+    padding-top:10px;
+    color:$color_secondary_vd;
+}
 .objects span{
     display: inline-block;
     width: 100%;
@@ -213,6 +220,36 @@ nav ul li ul li a{
 nav ul li ul li a:hover{
     background-color: #f3f3f3;
 }
+.changeTitleBtn{
+    position: absolute;
+    font-size:1.9em;
+    margin-left: 40%;
+    margin-top:15px;
+    color:$color_primary !important;
+    background-color:white;
+    border-radius: 3px;
+    border:none;
+}
+.changeTitleTxt{
+    position:absolute;
+    font-size:2em;
+    font-weight: 550;
+    margin-left: 42.1%;
+    margin-top:10px;
+    color:$color_secondary_vl;
+    background-color: $color_primary_vl;
+    width:38%;
+}
+.cancelBtn{
+    position: absolute;
+    font-size:1.9em;
+    margin-left: 38%;
+    margin-top:15px;
+    color:$color_primary !important;
+    background-color:white;
+    border-radius: 3px;
+    border:none;
+}
 .material-icons.md-18 { font-size: 18px; }
 .material-icons.md-24 { font-size: 24px; }
 .material-icons.md-36 { font-size: 36px; }
@@ -224,4 +261,12 @@ nav ul li ul li a:hover{
 }
 .material-icons:hover{
     color:$color_secondary !important;
+}
+.changeTitleBtn:hover{
+    color:$color_primary !important;
+    background-color:$color_secondary !important;
+}
+.cancelBtn:hover{
+    color:$color_primary !important;
+    background-color:$color_secondary !important;
 }
