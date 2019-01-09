@@ -200,7 +200,7 @@
     <script>
 
 
-$(".select-btn").click(function(){
+$(".select-btn").click(function(e){
   $(".post-dropdown").hide();
   $(".img-dropdown").hide();
   $(".select-dropdown").hide();
@@ -210,7 +210,7 @@ $(".select-btn").click(function(){
 
 
 $(document).click(function(e) {
-    if (!$(e.target).hasClass("select-btn") ) {     
+    if ($(e.target).closest('nav').length === 0) {     
         $(".post-dropdown").hide();
         $(".img-dropdown").hide();
         $(".select-dropdown").hide();
