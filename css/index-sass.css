@@ -6,9 +6,7 @@ body {
   background-color: #fff;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   z-index: 5;
-  position: absolute;
-  top: 30px;
-  left: 30px;
+  height: 10vh;
   width: 15vw;
 }
 
@@ -138,17 +136,26 @@ input {
   width: 40%;
 }
 
+input[type=submit] {
+  padding: 0.5em;
+}
+
 input[name=username] {
   width: 15vw;
+  padding: 0.5em;
+  border: 1px solid gray;
 }
 
 input[name=password] {
   width: 15vw;
+  padding: 0.5em;
+  border: 1px solid gray;
 }
 
 input[name=title] {
   float: left;
   padding: 1em;
+  border: 1px solid gray;
 }
 
 input[name=datepost] {
@@ -158,6 +165,7 @@ input[name=datepost] {
 
 input[type=file] {
   left: 30vw;
+  width: 7vw;
 }
 
 textarea {
