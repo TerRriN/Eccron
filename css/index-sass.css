@@ -77,6 +77,14 @@ h5 {
   border-bottom: 1px solid black;
 }
 
+h6 {
+  position: absolute;
+  font-size: 2em;
+  margin-left: 60%;
+  padding-top: 10px;
+  color: #c25e00;
+}
+
 .objects span {
   display: inline-block;
   width: 100%;
@@ -260,6 +268,39 @@ nav ul li ul li a:hover {
   background-color: #f3f3f3;
 }
 
+.changeTitleBtn {
+  position: absolute;
+  font-size: 1.9em;
+  margin-left: 40%;
+  margin-top: 15px;
+  color: #263238 !important;
+  background-color: white;
+  border-radius: 3px;
+  border: none;
+}
+
+.changeTitleTxt {
+  position: absolute;
+  font-size: 2em;
+  font-weight: 550;
+  margin-left: 42.1%;
+  margin-top: 10px;
+  color: #ffbd45;
+  background-color: #4f5b62;
+  width: 38%;
+}
+
+.cancelBtn {
+  position: absolute;
+  font-size: 1.9em;
+  margin-left: 38%;
+  margin-top: 15px;
+  color: #263238 !important;
+  background-color: white;
+  border-radius: 3px;
+  border: none;
+}
+
 .material-icons.md-18 {
   font-size: 18px;
 }
@@ -284,6 +325,16 @@ nav ul li ul li a:hover {
 
 .material-icons:hover {
   color: #fb8c00 !important;
+}
+
+.changeTitleBtn:hover {
+  color: #263238 !important;
+  background-color: #fb8c00 !important;
+}
+
+.cancelBtn:hover {
+  color: #263238 !important;
+  background-color: #fb8c00 !important;
 }
 
 /*# sourceMappingURL=index-sass.css.map */
