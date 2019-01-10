@@ -122,8 +122,6 @@ input[name=commentcontent]{
 .hide{
     display:none;
 }
-
-
 input{
     display: inline-block;
     border:none;
@@ -133,9 +131,6 @@ input{
     margin-left:50%;
     transform: translateX(-49%);
     width:40%;
-}
-input[type=submit]{
-    padding: 0.5em;
 }
 input[name=username]{
     width: 15vw;
