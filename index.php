@@ -42,22 +42,22 @@
              <form action="" method="post">
                 <input name="username" placeholder="Username"> </br>
                 <input name="password" placeholder="Password"> </br>
-                <input type="submit" value="Submit">
+                <input name="loginBtn" class="submitBtn" type="submit" value="SIGN IN">
              </form> 
              </li>
             </ul>     
         </li>
     
-    <?php if($_SESSION["account"] == 21){ ?>         
+    <?php if(isset($_SESSION["account"]) == 21){ ?>         
         <!--create post-->
         <li>
         <a class="select-btn material-icons md-36">note_add</a>
         <ul class="post-dropdown">
             <form action="" method="post">
-                <input name="title" placeholder="titel"></br>
+                <input name="title" placeholder="Title"></br>
                 <input name="datepost" type="date"></br>
                 <textarea name="content" placeholder="Text here..."></textarea> </br>
-                <input class="create-submit" type="submit" value="Submit">   
+                <input class="submitBtn" type="submit" value="CREATE">   
             </form>
         </ul>
         </li>
@@ -67,9 +67,9 @@
         <a class="select-btn material-icons md-36">add_photo_alternate</a>
             <ul class="img-dropdown">
                 <form action="create-img.php" method="post" enctype="multipart/form-data">
-                    <input name="fileName" type="file" multiple>
+                    <input name="fileName" type="file">
                     <input name="blog" type="hidden" value="<?php echo $blog ?>">
-                    <input type="submit" value="Submit" name="submit_file">
+                    <input type="submit" value="ADD" name="submit_file" class="submitBtn">
                 </form>
             </ul>
         </li>
@@ -84,14 +84,14 @@
                 $a = scandir($dir);
                 foreach($a as $img){ 
                     if(!in_array($img, $ignore)){   
-                        echo "<input type='checkbox' value='$img' name='object[]'/>", $img, "</br>";
+                        echo "<input type='checkbox' value='$img' name='object[]'/> <span class='selectImgTxt'>", $img ,"</span></br>";
                     }
                 }
             ?>
                 <input name="targetFolder" type="hidden" value="img/4/fold">
                 <input name="blog" type="hidden" value="<?php echo $blog ?>">
                 <input name="post" type="hidden" value="30">
-                <input type="submit" value="Submit">
+                <input type="submit" value="INSERT" class="submitBtn">
             </form>
             </div>
             </ul>
@@ -104,7 +104,7 @@
         $blogTitle = json_decode($response,true); ?>
         <h6><?php echo $blogTitle['title'][0]['title']; ?></h6>
 
-    <?php if($_SESSION["account"] == 21){ ?>
+    <?php if(isset($_SESSION["account"]) == 21){ ?>
         <button class="changeTitleBtn material-icons">edit</button>
         <button class="cancelBtn material-icons hide">clear</button>
         <form class="edit hide" action="" method="post">
@@ -125,7 +125,12 @@
                     <h1><?php echo $array["title"]; ?></h1>
                     <h2><?php echo $array["date"]; ?></h2>
                     <h3><?php echo $array["content"]; ?></h3>
-
+                    <?php if(isset($_SESSION["account"]) == 21){ ?>
+                    <form action="" method="post">
+                        <input type="hidden" name="postID" value="<?php echo $array["postID"]; ?> ">
+                        <input class="removePostBtn material-icons md-36" name="removePost" type="submit" value="delete">                        
+                    </form>
+                    <?php } ?>
                 <?php
                     if($array["postID"] == 28){//scandir måste jämföra mappens namn med postID
                         $dir = "img/4/30";
@@ -150,12 +155,20 @@
                         ["blogID"=>$blog, "postID"=>$array["postID"]]);
                         $comment = json_decode($response,true);
                         $x = 1;
-                    
+                        
                         if(isset($comment["posts"])){
                             foreach($comment["posts"] as $object){ 
                                 if($x <= 5){ ?>
+                                <div class="comment">
                                     <h4><?php echo $object["content"],"</br>\n"; ?></h4>
                                     <h5><?php echo $object["date"],"</br>\n"; ?></h5>
+                                    <?php if(isset($_SESSION["account"]) == 21){ ?>
+                                    <form action="" method="post">
+                                        <input type="hidden" name="commentID" value="<?php echo $object["commentID"]; ?> ">
+                                        <input class="removeCommentBtn material-icons md-24" name="removeComment" type="submit" value="delete">                        
+                                    </form>
+                                    <?php } ?>
+                                </div>
                                 <?php $x++;
                                 }else{break;}
                             } ?>
