@@ -42,7 +42,7 @@
              <form action="" method="post">
                 <input name="username" placeholder="Username"> </br>
                 <input name="password" placeholder="Password"> </br>
-                <input type="submit" value="Submit">
+                <input name="loginBtn" class="submitBtn" type="submit" value="SIGN IN">
              </form> 
              </li>
             </ul>     
@@ -54,10 +54,10 @@
         <a class="select-btn material-icons md-36">note_add</a>
         <ul class="post-dropdown">
             <form action="" method="post">
-                <input name="title" placeholder="titel"></br>
+                <input name="title" placeholder="Title"></br>
                 <input name="datepost" type="date"></br>
                 <textarea name="content" placeholder="Text here..."></textarea> </br>
-                <input class="create-submit" type="submit" value="Submit">   
+                <input class="submitBtn" type="submit" value="CREATE">   
             </form>
         </ul>
         </li>
@@ -67,9 +67,9 @@
         <a class="select-btn material-icons md-36">add_photo_alternate</a>
             <ul class="img-dropdown">
                 <form action="create-img.php" method="post" enctype="multipart/form-data">
-                    <input name="fileName" type="file" multiple>
+                    <input name="fileName" type="file">
                     <input name="blog" type="hidden" value="<?php echo $blog ?>">
-                    <input type="submit" value="Submit" name="submit_file">
+                    <input type="submit" value="ADD" name="submit_file" class="submitBtn">
                 </form>
             </ul>
         </li>
@@ -84,14 +84,14 @@
                 $a = scandir($dir);
                 foreach($a as $img){ 
                     if(!in_array($img, $ignore)){   
-                        echo "<input type='checkbox' value='$img' name='object[]'/>", $img, "</br>";
+                        echo "<input type='checkbox' value='$img' name='object[]'/> <span class='selectImgTxt'>", $img ,"</span></br>";
                     }
                 }
             ?>
                 <input name="targetFolder" type="hidden" value="img/4/fold">
                 <input name="blog" type="hidden" value="<?php echo $blog ?>">
                 <input name="post" type="hidden" value="30">
-                <input type="submit" value="Submit">
+                <input type="submit" value="INSERT" class="submitBtn">
             </form>
             </div>
             </ul>

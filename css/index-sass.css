@@ -6,7 +6,7 @@ body {
   background-color: #fff;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   z-index: 5;
-  height: 10vh;
+  height: 17vh;
   width: 15vw;
 }
 
@@ -27,6 +27,7 @@ body {
   background-color: #fff;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   z-index: 5;
+  color: black;
 }
 
 .show {
@@ -109,7 +110,7 @@ h6 {
 
 input[name=commentcontent] {
   padding: 8px;
-  width: 90%;
+  width: 92%;
   float: left;
   font-size: 1em;
   margin: 1% 1%;
@@ -162,52 +163,86 @@ input {
 
 input[name=username] {
   width: 15vw;
-  padding: 0.5em;
-  border: 1px solid gray;
+  height: 5vh;
+  padding-left: 2px;
+  border: 1px solid #263238;
+  font-size: 1.2em;
 }
 
 input[name=password] {
   width: 15vw;
-  padding: 0.5em;
-  border: 1px solid gray;
+  height: 5vh;
+  padding-left: 2px;
+  border: 1px solid #263238;
+  margin-top: 1vh;
+  font-size: 1.2em;
 }
 
 input[name=title] {
   float: left;
-  padding: 1em;
-  border: 1px solid gray;
+  width: 27vw;
+  height: 5vh;
+  padding-left: 2px;
+  border: 1px solid #263238;
+  margin-top: 1vh;
+  font-size: 1.2em;
 }
 
 input[name=datepost] {
-  float: right;
-  margin-top: -2%;
+  float: left;
+  width: 9vw;
+  height: 5vh;
+  margin-left: 2vw;
+  margin-top: -1vh;
+  font-size: 1.3em;
+  border: 1px solid #263238;
 }
 
 input[type=file] {
-  left: 30vw;
-  width: 7vw;
+  color: black;
+  border: 1px solid #263238;
+  width: 15vw;
+  padding: 1vh 2px;
+  font-size: 1.1em;
+}
+
+input[type=checkbox] {
+  width: 3vh;
+  height: 3vh;
+}
+
+.selectImgTxt {
+  position: absolute;
+  font-size: 2vh;
+  margin-top: 0.5vh;
+}
+
+.submitBtn {
+  margin-top: 1vh;
+  width: 15vw;
+  font-size: 1em;
+  font-weight: 900;
+  height: 5vh;
+  color: #4f5b62;
+  background-color: white;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.submitBtn:hover {
+  color: #ffbd45;
+  background-color: #4f5b62;
 }
 
 textarea {
+  font-family: "Roboto", sans-serif !important;
+  margin-top: 1vh;
   white-space: pre;
-  font-size: 1.3em;
+  font-size: 1.1em;
   height: 50vh;
   width: 100%;
   resize: vertical;
-}
-
-.create-submit {
-  background-color: #fb8c00;
-  padding: 14px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-left: 50%;
-  transform: translateX(-49%);
-}
-
-.create-submit:hover {
-  background-color: #4f5b62;
+  border-color: #263238;
 }
 
 * {
@@ -269,6 +304,7 @@ nav ul li:focus ul {
 
 nav ul li ul li {
   width: 180px;
+  height: 300px;
   border-radius: 4px;
 }
 
