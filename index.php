@@ -36,20 +36,22 @@
         <p>Eccron</p>
 
         <li>
-        <a class="login-btn material-icons md-36">account_circle</a>
+        <a class="select-btn material-icons md-36">account_circle</a>
             <ul class="login-dropdown">
+            <li>
              <form action="" method="post">
                 <input name="username" placeholder="Username"> </br>
                 <input name="password" placeholder="Password"> </br>
                 <input type="submit" value="Submit">
              </form> 
+             </li>
             </ul>     
         </li>
     
     <?php if(isset($_SESSION["account"]) == 21){ ?>         
         <!--create post-->
         <li>
-        <a class="post-btn material-icons md-36">note_add</a>
+        <a class="select-btn material-icons md-36">note_add</a>
         <ul class="post-dropdown">
             <form action="" method="post">
                 <input name="title" placeholder="titel"></br>
@@ -62,7 +64,7 @@
 
         <!--create image-->
         <li>
-        <a class="image-btn material-icons md-36">add_photo_alternate</a>
+        <a class="select-btn material-icons md-36">add_photo_alternate</a>
             <ul class="img-dropdown">
                 <form action="create-img.php" method="post" enctype="multipart/form-data">
                     <input name="fileName" type="file" multiple>
@@ -209,22 +211,28 @@
     </div>
 
     <script>
-$(".login-btn").click(function(){
-  $(".login-dropdown").toggleClass("show");
+
+
+$(".select-btn").click(function(e){
+  $(".post-dropdown").hide();
+  $(".img-dropdown").hide();
+  $(".select-dropdown").hide();
+  $(".login-dropdown").hide();
+  $(this).parent().find('ul').show();
 });
 
-$(".image-btn").click(function(){
-  $(".img-dropdown").toggleClass("show");
+
+$(document).click(function(e) {
+    if ($(e.target).closest('nav').length === 0) {     
+        $(".post-dropdown").hide();
+        $(".img-dropdown").hide();
+        $(".select-dropdown").hide();
+        $(".login-dropdown").hide();
+    }
 });
 
-$(".post-btn").click(function(){
-  $(".post-dropdown").toggleClass("show");
-});
 
-$(".select-btn").click(function(){
-  $(".select-dropdown").toggleClass("show");
-});
-    </script>
+ </script>
 
 <script>
     $(".displayAll").click(function(){
