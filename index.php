@@ -16,6 +16,7 @@
 <head>
     <meta charset="utf-8" />
     <script src="js/jquery-3.3.1.min.js"></script>
+    
 
     <script>
     <?php
@@ -209,53 +210,7 @@
                 </div>
         <?php } ?> 
     </div>
-
-    <script>
-
-
-$(".select-btn").click(function(e){
-  $(".post-dropdown").hide();
-  $(".img-dropdown").hide();
-  $(".select-dropdown").hide();
-  $(".login-dropdown").hide();
-  $(this).parent().find('ul').show();
-});
-
-
-$(document).click(function(e) {
-    if ($(e.target).closest('nav').length === 0) {     
-        $(".post-dropdown").hide();
-        $(".img-dropdown").hide();
-        $(".select-dropdown").hide();
-        $(".login-dropdown").hide();
-    }
-});
-
-
- </script>
-
-<script>
-    $(".displayAll").click(function(){
-        $(".displayAll").toggleClass("hide");
-        $(".hideAll").toggleClass("hide");
-    });
-    $(".hideAll").click(function(){
-        $(".displayAll").toggleClass("hide");
-        $(".hideAll").toggleClass("hide");
-    });
-</script>
-<script>
-    $(".changeTitleBtn").click(function(){
-        $(".edit").toggleClass("hide");
-        $(".changeTitleBtn").toggleClass("hide");
-        $(".cancelBtn").toggleClass("hide");
-    });
-    $(".cancelBtn").click(function(){
-        $(".edit").toggleClass("hide");
-        $(".changeTitleBtn").toggleClass("hide");
-        $(".cancelBtn").toggleClass("hide");
-    });
-</script>
-
+    
+    <script src="js/myJquery.js"></script>
 </body>
 </html>
