@@ -144,10 +144,6 @@ input {
   width: 40%;
 }
 
-input[type=submit] {
-  padding: 0.5em;
-}
-
 input[name=username] {
   width: 15vw;
   padding: 0.5em;
