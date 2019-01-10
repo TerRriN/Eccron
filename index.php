@@ -48,7 +48,7 @@
             </ul>     
         </li>
     
-    <?php if($_SESSION["account"] == 21){ ?>         
+    <?php if(isset($_SESSION["account"]) == 21){ ?>         
         <!--create post-->
         <li>
         <a class="select-btn material-icons md-36">note_add</a>
@@ -104,7 +104,7 @@
         $blogTitle = json_decode($response,true); ?>
         <h6><?php echo $blogTitle['title'][0]['title']; ?></h6>
 
-    <?php if($_SESSION["account"] == 21){ ?>
+    <?php if(isset($_SESSION["account"]) == 21){ ?>
         <button class="changeTitleBtn material-icons">edit</button>
         <button class="cancelBtn material-icons hide">clear</button>
         <form class="edit hide" action="" method="post">
@@ -125,7 +125,12 @@
                     <h1><?php echo $array["title"]; ?></h1>
                     <h2><?php echo $array["date"]; ?></h2>
                     <h3><?php echo $array["content"]; ?></h3>
-
+                    <?php if(isset($_SESSION["account"]) == 21){ ?>
+                    <form action="" method="post">
+                        <input type="hidden" name="postID" value="<?php echo $array["postID"]; ?> ">
+                        <input class="removePostBtn material-icons md-36" name="removePost" type="submit" value="delete">                        
+                    </form>
+                    <?php } ?>
                 <?php
                     if($array["postID"] == 28){//scandir måste jämföra mappens namn med postID
                         $dir = "img/4/30";
@@ -150,12 +155,20 @@
                         ["blogID"=>$blog, "postID"=>$array["postID"]]);
                         $comment = json_decode($response,true);
                         $x = 1;
-                    
+                        
                         if(isset($comment["posts"])){
                             foreach($comment["posts"] as $object){ 
                                 if($x <= 5){ ?>
+                                <div class="comment">
                                     <h4><?php echo $object["content"],"</br>\n"; ?></h4>
                                     <h5><?php echo $object["date"],"</br>\n"; ?></h5>
+                                    <?php if(isset($_SESSION["account"]) == 21){ ?>
+                                    <form action="" method="post">
+                                        <input type="hidden" name="commentID" value="<?php echo $object["commentID"]; ?> ">
+                                        <input class="removeCommentBtn material-icons md-24" name="removeComment" type="submit" value="delete">                        
+                                    </form>
+                                    <?php } ?>
+                                </div>
                                 <?php $x++;
                                 }else{break;}
                             } ?>
