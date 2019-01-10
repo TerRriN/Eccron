@@ -8,7 +8,9 @@ body{
     background-color: #fff;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     z-index: 5;
-}
+    height: 10vh;
+    width: 15vw;
+  }
   
 .img-dropdown{
     background-color: #fff;
@@ -20,6 +22,7 @@ body{
     background-color: #fff;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     z-index: 5;
+    width: 40vw;
   }
   
 .select-dropdown{
@@ -131,9 +134,23 @@ input{
     transform: translateX(-49%);
     width:40%;
 }
-
+input[type=submit]{
+    padding: 0.5em;
+}
+input[name=username]{
+    width: 15vw;
+    padding: 0.5em;
+    border: 1px solid gray;
+}
+input[name=password]{
+    width: 15vw;
+    padding: 0.5em;
+    border: 1px solid gray;
+}
 input[name=title]{
     float:left;
+    padding: 1em;
+    border: 1px solid gray;
 }
 input[name=datepost]{
     float: right;
@@ -141,6 +158,7 @@ input[name=datepost]{
 }
 input[type=file]{
     left: 30vw;
+    width: 7vw;
 }
 textarea{
     white-space: pre;
