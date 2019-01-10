@@ -40,9 +40,9 @@
             <ul class="login-dropdown">
             <li>
              <form action="" method="post">
-                <input name="username" placeholder="Username"> </br>
-                <input name="password" placeholder="Password"> </br>
-                <input type="submit" value="Submit">
+                <input  name="username" placeholder="Username"> </br>
+                <input  name="password" placeholder="Password"> </br>
+                <input  type="submit" value="Submit">
              </form> 
              </li>
             </ul>     
