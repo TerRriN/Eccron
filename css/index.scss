@@ -41,6 +41,13 @@ body{
 .post{
     margin-top:5vh;
 }
+.removePostBtn{
+    position:absolute;
+    margin-left:5%;
+    margin-top:1vh;
+    color:$color_primary_vl !important;
+    background-color:white;
+}
 h1{
     float: left;
     font-size:2em;
@@ -106,6 +113,13 @@ input[name=commentcontent]{
     font-weight: bolder;
     width:7%;
     margin:1% -1%;
+}
+.removeCommentBtn{
+    position:absolute;
+    margin-left:95%;
+    margin-top:-5vh;
+    color:$color_primary_vl !important;
+    background-color:white;
 }
 .load{
     width:100%;

@@ -40,6 +40,14 @@ body {
   margin-top: 5vh;
 }
 
+.removePostBtn {
+  position: absolute;
+  margin-left: 5%;
+  margin-top: 1vh;
+  color: #4f5b62 !important;
+  background-color: white;
+}
+
 h1 {
   float: left;
   font-size: 2em;
@@ -112,6 +120,14 @@ input[name=commentcontent] {
   font-weight: bolder;
   width: 7%;
   margin: 1% -1%;
+}
+
+.removeCommentBtn {
+  position: absolute;
+  margin-left: 95%;
+  margin-top: -5vh;
+  color: #4f5b62 !important;
+  background-color: white;
 }
 
 .load {

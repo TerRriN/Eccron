@@ -58,4 +58,28 @@
                 "blogID"=>$blog
             ]);
         }
+    /*Sends form as json to server, remove-post*/
+        if(isset($_POST["postID"]) && isset($_POST["removePost"])){
+            $postID = $_POST["postID"];
+
+            $response = myCurl::execute_curl("http://10.130.216.144/~theprovider/blog/php/remove-post.php",
+            [
+                "token"=>$_SESSION["token"],
+                "accountID"=>$_SESSION["account"],
+                "blogID"=>$blog,
+                "postID"=>$postID
+            ]);
+        }
+    /*Sends form as json to server, remove-post*/
+        if(isset($_POST["commentID"]) && isset($_POST["removeComment"])){
+            $commentID = $_POST["commentID"];
+
+            $response = myCurl::execute_curl("http://10.130.216.144/~theprovider/blog/php/remove-other-comments.php",
+            [
+                "token"=>$_SESSION["token"],
+                "accountID"=>$_SESSION["account"],
+                "blogID"=>$blog,
+                "commentID"=>$commentID
+            ]);
+        }
 ?>
