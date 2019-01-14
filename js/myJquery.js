@@ -3,15 +3,15 @@ $(".select-btn").click(function(e){
     $(".img-dropdown").hide();
     $(".select-dropdown").hide();
     $(".login-dropdown").hide();
-    $(this).parent().find('ul').show();
+    $(this).parent().find('ul').show("fast");
 });
   
 $(document).click(function(e) {
     if ($(e.target).closest('nav').length === 0) {     
-        $(".post-dropdown").hide();
-        $(".img-dropdown").hide();
-        $(".select-dropdown").hide();
-        $(".login-dropdown").hide();
+        $(".post-dropdown").hide("fast");
+        $(".img-dropdown").hide("fast");
+        $(".select-dropdown").hide("fast");
+        $(".login-dropdown").hide("fast");
     }
 });
 
