@@ -8,11 +8,11 @@
                 "username"=>$username,
                 "password"=>$password,
             ]);
-                var_dump($response);
-                $token = json_decode($response,true);
-                $_SESSION["token"] = $token["token"];
-                $account = json_decode($response,true);
-                $_SESSION["account"] = $account["accountID"];
+            $newResponse = json_decode($response,true);
+            if(isset($newResponse["token"])){
+                $_SESSION["token"] = $newResponse["token"];
+                $_SESSION["account"] = $newResponse["accountID"];
+            }
         }
     /*Sends form as json to server, create-post*/
         if(isset($_POST["title"]) && isset($_POST["datepost"]) && isset($_POST["content"])){
@@ -29,6 +29,7 @@
                 "date"=>$datepost,
                 "content"=>$content
             ]);
+            $newResponse = json_decode($response,true);
         }
     /*Sends form as json to server, create-comment*/ 
         if(isset($_POST["commentcontent"]) && isset($_POST["commentdate"]) && isset($_POST["id"])){

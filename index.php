@@ -27,7 +27,6 @@
                 $(".displayAll").toggleClass("hide");
                 $(".hideAll").toggleClass("hide");
             }
-            
         }
     </script>
 </head>
@@ -58,7 +57,7 @@
                 <input name="title" placeholder="Title"></br>
                 <input name="datepost" type="date"></br>
                 <textarea name="content" placeholder="Text here..."></textarea> </br>
-                <input class="submitBtn" type="submit" value="CREATE">   
+                <input name="createBtn" class="submitBtn" type="submit" value="CREATE">   
             </form>
         </ul>
         </li>
@@ -92,16 +91,15 @@
                 <input name="targetFolder" type="hidden" value="img/4/fold">
                 <input name="blog" type="hidden" value="<?php echo $blog ?>">
                 <input name="post" type="hidden" value="30">
-                <input type="submit" value="INSERT" class="submitBtn">
+                <input name="insertFile" type="submit" value="INSERT" class="submitBtn">
             </form>
             </div>
             </ul>
         
             </li>
     </ul>
-    <?php } ?>
-        
-        <?php $response = myCurl::execute_curl("http://10.130.216.144/~theprovider/blog/php/get-title.php",["blogID"=>4]);
+    <?php } 
+        $response = myCurl::execute_curl("http://10.130.216.144/~theprovider/blog/php/get-title.php",["blogID"=>4]);
         $blogTitle = json_decode($response,true); ?>
         <h6><?php echo $blogTitle['title'][0]['title']; ?></h6>
 
@@ -113,10 +111,39 @@
             <input class="changeTitleBtn hide material-icons" type="submit" value="done">
         </form>
     <?php } ?>
-</nav>
+</nav> 
+        
+    <?php
+        if(isset($_POST["loginBtn"])){
+            if($newResponse["status"] == true){
+                echo "<div class='message'>Signed in</div>";
+            }else{
+                echo "<div class='message'>Wrong username/password</div>";
+            }
+        }
+        if(isset($_POST["createBtn"])){
+            if($newResponse["status"] == true){
+                echo "<div class='message'>Post created</div>";
+            }else{
+                echo "<div class='message'>Could not create post</div>";
+            }
+        }
+        if(isset($_POST["submit-file"])){
+            if($newResponse["status"] == true){
+                echo "<div class='message'>Image added</div>";
+            }else{
+                echo "<div class='message'>Could not add image</div>";
+            }
+        }
+        if(isset($_POST["insertFile"])){
+            if($newResponse["status"] == true){
+                echo "<div class='message'>Image inserted</div>";
+            }else{
+                echo "<div class='message'>Could not insert image</div>";
+            }
+        }
+    ?>
 
-    
-   
     <div class="flow">
         <?php require("php/post.php"); ?> 
     </div>
