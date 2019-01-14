@@ -43,20 +43,24 @@
             }
         }
 
+        $bla = "true";
         $response = [
             "status"=>true,
             "message"=>"Bild tillagd"
         ];
     
     }catch(Exception $exc){
+        $bla = "false";
         $response = [
             "status"=>false,
             "message"=>$exc->getMessage()
         ];
     }
+    /*MIGHT BE USEFUL IN THE FUTURE
     echo json_encode($response);
     $image = $_FILES["fileName"]["name"];
     $img = $target_dir . $target_folder . "/fold/" . $image;
     echo $img;
-    echo '<img src="'.$img.'">';
+    echo '<img src="'.$img.'">';*/
+    header("Location: ../index.php?addImg=$bla");
 ?>

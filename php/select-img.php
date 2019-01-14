@@ -17,16 +17,18 @@
             rename($oldTarget . $img, $newTarget . "/" . $img);
         }
         
+        $bla = "true";
         $response = [
             "status"=>true,
             "message"=>"Bild tillagd"
         ];
     
     }catch(Exception $exc){
+        $bla = "false";
         $response = [
             "status"=>false,
             "message"=>$exc->getMessage()
         ];
     }
-    echo json_encode($response);
+    header("Location: ../index.php?insertImg=$bla");
 ?>
