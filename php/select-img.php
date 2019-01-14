@@ -1,13 +1,13 @@
 <?php
     try{
-        include "utility/utility.php";
+        include "../utility/utility.php";
 
         $blog = $_POST["blog"];
         $target_dir = $_POST["post"];
         $object = $_POST["object"];
         
-        $oldTarget = "img/" . $blog . "/fold/";
-        $newTarget = "img/" . $blog . "/" . $target_dir;
+        $oldTarget = "../img/" . $blog . "/fold/";
+        $newTarget = "../img/" . $blog . "/" . $target_dir;
         
         if(is_dir($newTarget) === false){
             mkdir($newTarget);

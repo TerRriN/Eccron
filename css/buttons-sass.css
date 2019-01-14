@@ -1,0 +1,76 @@
+.cancelBtn {
+  position: absolute;
+  font-size: 1.9em;
+  margin-left: 38%;
+  margin-top: 15px;
+  color: #263238 !important;
+  background-color: white;
+  border-radius: 3px;
+  border: none;
+}
+
+.changeTitleBtn {
+  position: absolute;
+  font-size: 1.9em;
+  margin-left: 40%;
+  margin-top: 15px;
+  color: #263238 !important;
+  background-color: white;
+  border-radius: 3px;
+  border: none;
+}
+
+.submitBtn {
+  margin-top: 1vh;
+  width: 15vw;
+  font-size: 1em;
+  font-weight: 900;
+  height: 5vh;
+  color: #4f5b62;
+  background-color: white;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.submitBtn:hover {
+  color: #ffbd45;
+  background-color: #4f5b62;
+}
+
+.material-icons.md-18 {
+  font-size: 18px;
+}
+
+.material-icons.md-24 {
+  font-size: 24px;
+}
+
+.material-icons.md-36 {
+  font-size: 36px;
+}
+
+.material-icons.md-48 {
+  font-size: 48px;
+}
+
+.material-icons {
+  color: white;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.material-icons:hover {
+  color: #fb8c00 !important;
+}
+
+.changeTitleBtn:hover {
+  color: #263238 !important;
+  background-color: #fb8c00 !important;
+}
+
+.cancelBtn:hover {
+  color: #263238 !important;
+  background-color: #fb8c00 !important;
+}
+
+/*# sourceMappingURL=icons-sass.css.map */
