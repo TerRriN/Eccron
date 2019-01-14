@@ -66,7 +66,7 @@
         <li>
         <a class="select-btn material-icons md-36">add_photo_alternate</a>
             <ul class="img-dropdown">
-                <form action="create-img.php" method="post" enctype="multipart/form-data">
+                <form action="php/create-img.php" method="post" enctype="multipart/form-data">
                     <input name="fileName" type="file">
                     <input name="blog" type="hidden" value="<?php echo $blog ?>">
                     <input type="submit" value="ADD" name="submit_file" class="submitBtn">
@@ -77,7 +77,7 @@
             <li>
             <a class="select-btn material-icons md-36">photo_library</a>
                 <ul class="select-dropdown">
-            <form action="select-img.php" method="post">
+            <form action="php/select-img.php" method="post">
             <?php
                 $dir = "img/4/fold";
                 $ignore = Array(".", "..");
@@ -128,15 +128,15 @@
                 echo "<div class='message'>Could not create post</div>";
             }
         }
-        if(isset($_POST["submit-file"])){
-            if($newResponse["status"] == true){
+        if(isset($_GET["addImg"])){
+            if($_GET["addImg"] == "true"){
                 echo "<div class='message'>Image added</div>";
             }else{
                 echo "<div class='message'>Could not add image</div>";
             }
         }
-        if(isset($_POST["insertFile"])){
-            if($newResponse["status"] == true){
+        if(isset($_GET["insertImg"])){
+            if($_GET["insertImg"] == "true"){
                 echo "<div class='message'>Image inserted</div>";
             }else{
                 echo "<div class='message'>Could not insert image</div>";
