@@ -1,8 +1,8 @@
 <?php 
     try{
-        include "utility/utility.php";
+        include "../utility/utility.php";
         
-        $target_dir = "img/";
+        $target_dir = "../img/";
         $target_folder = $_POST["blog"];
         
         $target_file = $target_dir . $target_folder . "/" . "fold" . "/" . basename($_FILES["fileName"]["name"]);
