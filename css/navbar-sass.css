@@ -176,4 +176,37 @@ nav ul li ul li a:hover {
   width: 38%;
 }
 
+.message {
+  position: absolute;
+  visibility: hidden;
+  left: 2vw;
+  padding: 3vh 2vw;
+  text-align: center;
+  font-size: 2em;
+  box-shadow: 0px 2px 10px;
+}
+
+@keyframes downAnim {
+  0% {
+    top: -10vh;
+    visibility: hidden;
+  }
+  10% {
+    top: 6vh;
+    visibility: visible;
+  }
+  90% {
+    top: 6vh;
+    visibility: visible;
+  }
+  100% {
+    top: -10vh;
+    visibility: hidden;
+  }
+}
+.animateOn {
+  animation-name: downAnim;
+  animation-duration: 5s;
+}
+
 /*# sourceMappingURL=navbar-sass.css.map */
