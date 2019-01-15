@@ -48,7 +48,8 @@ h5{
 h6{
     position:absolute;
     font-size:2em;
-    margin-left: 60%;
+    margin-left: 50%;
+    transform: translateX(-50%);
     padding-top:10px;
     color:$color_secondary_vd;
 }
