@@ -36,3 +36,7 @@ $(".cancelBtn").click(function(){
     $(".changeTitleBtn").toggleClass("hide");
     $(".cancelBtn").toggleClass("hide");
 });
+
+window.onload = function() {
+    $(".message").addClass("animateOn");
+}
